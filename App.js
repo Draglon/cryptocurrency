@@ -1,16 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
+
+import Header from './views/Header';
+import Layout from './views/Layout';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={styles.main}>
+      <Header />
+      <ScrollView>
+        <Layout />
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  main: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',

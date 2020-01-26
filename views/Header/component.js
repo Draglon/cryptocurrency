@@ -7,11 +7,11 @@ export default function Header() {
       <View style={styles.wrapper}>
         <Image
           style={styles.logo}
-          source={require('../../assets/label-ruby.png')}
+          source={require('../../assets/logo.png')}
         />
         <Button
           style={styles.btn}
-          title="Press me"
+          title="="
           onPress={() => Alert.alert('Simple Button pressed')}
         />
       </View>
@@ -21,13 +21,21 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#666666',
-    alignSelf: "stretch",
-    justifyContent: 'space-between',
+    backgroundColor: '#ffffff',
+    borderBottomWidth: 1,
+    borderBottonStyle: 'solid',
+    borderBottomColor: '#666666',
+    flex: 1,
   },
   wrapper: {
-    // backgroundColor: '#666666',
-    // alignSelf: "stretch",
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   logo: {
     width: 100,
@@ -35,6 +43,9 @@ const styles = StyleSheet.create({
     resizeMode: 'stretch',
   },
   btn: {
-
+    flex: 1,
+    width: 50,
+    height: 30,
+    resizeMode: 'stretch',
   },
 });

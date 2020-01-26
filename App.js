@@ -8,9 +8,11 @@ export default function App() {
   return (
     <View style={styles.main}>
       <Header />
-      <ScrollView>
-        <Layout />
-      </ScrollView>
+      <View style={styles.page}>
+        <ScrollView>
+          <Layout />
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -18,8 +20,10 @@ export default function App() {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'stretch',
+  },
+  page: {
+    backgroundColor: '#999999',
+    flex: 9,
   },
 });

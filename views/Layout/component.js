@@ -13,7 +13,7 @@ export default function Layout() {
 
 const styles = StyleSheet.create({
   layout: {
-    backgroundColor: '#cccccc',
+    backgroundColor: '#ccc',
     flex: 1,
     alignItems: "stretch",
   },

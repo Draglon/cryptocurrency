@@ -1,5 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { View, Image, Button, StyleSheet } from 'react-native';
+import { Icon } from 'react-native-elements';
+
+// import Icon from '../shared/Icon';
 
 export default function Header() {
   return (
@@ -7,13 +10,16 @@ export default function Header() {
       <View style={styles.wrapper}>
         <Image
           style={styles.logo}
-          source={require('../../assets/logo.png')}
+          source={require('../../assets/images/logo.png')}
         />
-        <Button
+        {/* <Button
           style={styles.btn}
           title="="
           onPress={() => Alert.alert('Simple Button pressed')}
-        />
+        /> */}
+        <View>
+          <Icon name='rowing' />
+        </View>
       </View>
     </View>
   );
@@ -21,10 +27,10 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottonStyle: 'solid',
-    borderBottomColor: '#666666',
+    borderStyle: 'solid',
+    borderBottomColor: '#666',
     flex: 1,
   },
   wrapper: {

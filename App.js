@@ -1,13 +1,23 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
+import { Header, Image } from 'react-native-elements';
 
-import Header from './views/Header';
 import Layout from './views/Layout';
 
 export default function App() {
   return (
     <View style={styles.main}>
-      <Header />
+      <Header
+        containerStyle={styles.header}
+        leftComponent={
+          <Image
+            source={require('./assets/images/logo.png')}
+            style={styles.logo}
+          />
+        }
+        centerComponent={{ text: 'Main page', style: { color: '#fff' } }}
+        rightComponent={{ icon: 'menu', color: '#fff' }}
+      />
       <View style={styles.page}>
         <ScrollView>
           <Layout />
@@ -25,5 +35,14 @@ const styles = StyleSheet.create({
   page: {
     backgroundColor: '#999999',
     flex: 9,
+  },
+  header: {
+    backgroundColor: '#333',
+    justifyContent: 'space-around',
+  },
+  logo: {
+    width: 100,
+    height: 50,
+    resizeMode: 'stretch',
   },
 });

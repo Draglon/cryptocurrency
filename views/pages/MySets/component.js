@@ -1,10 +1,9 @@
 import React from 'react'
 import { Text, View, Button } from 'react-native';
-import { Avatar } from 'react-native-elements';
 
 import CurrencyField from '../../shared/CurrencyField';
 
-export default function MySets() {
+export default function MainPage() {
   const [value, onChangeText] = React.useState('Useless Placeholder');
 
   return (
@@ -17,23 +16,11 @@ export default function MySets() {
         />
       </View>
 
-      {/* <View>
-        <CurrencyField />
-        <CurrencyField />
-        <CurrencyField />
-        <CurrencyField />
-      </View> */}
-
-      
       <View>
-        <Text >Avatar</Text>
-        <Avatar
-          rounded
-          source={{
-            uri:
-              'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-          }}
-        />
+        <CurrencyField />
+        <CurrencyField />
+        <CurrencyField />
+        <CurrencyField />
       </View>
     </View>
   );

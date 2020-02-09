@@ -1,27 +1,34 @@
 import React from 'react';
 import { View, Image, Button, StyleSheet } from 'react-native';
-import { Icon } from 'react-native-elements';
+// import { Icon, Header } from 'react-native-elements';
 
 // import Icon from '../shared/Icon';
 
-export default function Header() {
+export default function MainHeader() {
   return (
-    <View style={styles.header}>
-      <View style={styles.wrapper}>
-        <Image
-          style={styles.logo}
-          source={require('../../assets/images/logo.png')}
-        />
-        {/* <Button
-          style={styles.btn}
-          title="="
-          onPress={() => Alert.alert('Simple Button pressed')}
-        /> */}
-        <View>
-          <Icon name='rowing' />
-        </View>
-      </View>
+    <View>
+      {/* <Header
+        leftComponent={{ icon: 'menu', color: '#fff' }}
+        centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+        rightComponent={{ icon: 'home', color: '#fff' }}
+      /> */}
     </View>
+    // <View style={styles.header}>
+    //   <View style={styles.wrapper}>
+    //     {/* <Image
+    //       style={styles.logo}
+    //       source={require('../../assets/images/logo.png')}
+    //     /> */}
+    //     {/* <Button
+    //       style={styles.btn}
+    //       title="="
+    //       onPress={() => Alert.alert('Simple Button pressed')}
+    //     /> */}
+    //     {/* <View>
+    //       <Icon name='rowing' />
+    //     </View> */}
+    //   </View>
+    // </View>
   );
 }
 

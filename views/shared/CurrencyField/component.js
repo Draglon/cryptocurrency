@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, TextInput, Button } from 'react-native';
 
-export default function CurrencyField() {
+const CurrencyField = () => {
   const [value, onChangeText] = React.useState('Useless Placeholder');
 
   return (
@@ -18,3 +18,5 @@ export default function CurrencyField() {
     </View>
   );
 }
+
+export default CurrencyField;

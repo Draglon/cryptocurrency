@@ -1,9 +1,11 @@
 import React from 'react'
 import { View, Button } from 'react-native';
 
-export default function ButtonPrimary() {
+const ButtonPrimary = () => {
   return (
-    <View>
+    <View
+      style={styles.buttonWrapper}
+    >
       <Button
         style={styles.buttonPrimary}
         title="Add to list"
@@ -11,9 +13,14 @@ export default function ButtonPrimary() {
       />
     </View>
   );
-}
+};
+
+export default ButtonPrimary;
 
 const styles = StyleSheet.create({
+  buttonWrapper: {
+    
+  },
   buttonPrimary: {
     backgroundColor: '#ccc',
     flex: 1,

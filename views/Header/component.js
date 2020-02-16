@@ -1,36 +1,24 @@
 import React from 'react';
-import { View, Image, Button, StyleSheet } from 'react-native';
-// import { Icon, Header } from 'react-native-elements';
+import { Image, StyleSheet } from 'react-native';
+import { Header } from 'react-native-elements';
 
-// import Icon from '../shared/Icon';
-
-export default function MainHeader() {
+const HeaderComponent = () => {
   return (
-    <View>
-      {/* <Header
-        leftComponent={{ icon: 'menu', color: '#fff' }}
-        centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-        rightComponent={{ icon: 'home', color: '#fff' }}
-      /> */}
-    </View>
-    // <View style={styles.header}>
-    //   <View style={styles.wrapper}>
-    //     {/* <Image
-    //       style={styles.logo}
-    //       source={require('../../assets/images/logo.png')}
-    //     /> */}
-    //     {/* <Button
-    //       style={styles.btn}
-    //       title="="
-    //       onPress={() => Alert.alert('Simple Button pressed')}
-    //     /> */}
-    //     {/* <View>
-    //       <Icon name='rowing' />
-    //     </View> */}
-    //   </View>
-    // </View>
+    <Header
+      containerStyle={styles.header}
+      leftComponent={
+        <Image
+          source={require('../../assets/images/logo.png')}
+          style={styles.logo}
+        />
+      }
+      centerComponent={{ text: 'Main page', style: { color: '#fff' } }}
+      rightComponent={{ icon: 'menu', color: '#fff' }}
+    />
   );
 }
+
+export default HeaderComponent;
 
 const styles = StyleSheet.create({
   header: {

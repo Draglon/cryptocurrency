@@ -6,7 +6,7 @@ import { menuStatus as menuStatusAction } from '../../../state/menu/actions';
 import MenuComponent from './component';
 
 class MenuContainer extends Component {
-  handleOpenMenu = () => {
+  handleMenuOpen = () => {
     const { menuStatus } = this.props;
     menuStatus(MENU_MODAL.open);
   }
@@ -14,7 +14,7 @@ class MenuContainer extends Component {
   render() {
     return (
       <MenuComponent
-        onOpenMenu={this.handleOpenMenu}
+        onMenuOpen={this.handleMenuOpen}
       />
     );
   }

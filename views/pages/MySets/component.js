@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View } from 'react-native';
 
-import CurrencyField from '../../shared/CurrencyField';
+// import CurrencyField from '../../shared/CurrencyField';
 
 export default function MainPage() {
   // const [value, onChangeText] = React.useState('Useless Placeholder');
@@ -10,18 +10,18 @@ export default function MainPage() {
     <View>
       <View>
         <Text>Default set</Text>
-        <Button
+        {/* <Button
           title="Add to list"
-          // onPress={() => Alert.alert('Simple Button pressed')}
-        />
+          onPress={() => Alert.alert('Simple Button pressed')}
+        /> */}
       </View>
 
-      <View>
+      {/* <View>
         <CurrencyField />
         <CurrencyField />
         <CurrencyField />
         <CurrencyField />
-      </View>
+      </View> */}
     </View>
   );
 }

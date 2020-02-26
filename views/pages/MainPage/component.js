@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
-import { Avatar } from 'react-native-elements';
+import { Text, View } from 'react-native';
 
 // import CurrencyField from '../../shared/CurrencyField';
 
@@ -11,10 +10,10 @@ export default function MySets() {
     <View>
       <View>
         <Text>Default set</Text>
-        <Button
+        {/* <Button
           title="Add to list"
           // onPress={() => Alert.alert('Simple Button pressed')}
-        />
+        /> */}
       </View>
 
       {/* <View>
@@ -23,17 +22,6 @@ export default function MySets() {
         <CurrencyField />
         <CurrencyField />
       </View> */}
-
-      <View>
-        <Text>Avatar</Text>
-        <Avatar
-          rounded
-          source={{
-            uri:
-              'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-          }}
-        />
-      </View>
     </View>
   );
 }

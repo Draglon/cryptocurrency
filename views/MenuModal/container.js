@@ -13,7 +13,7 @@ class MenuModalContainer extends Component {
     return menuModal === MENU_MODAL.open;
   }
 
-  handleCloseMenu = () => {
+  handleMenuClose = () => {
     const { menuStatus } = this.props;
     menuStatus(MENU_MODAL.close);
   }
@@ -22,7 +22,7 @@ class MenuModalContainer extends Component {
     return (
       <MenuModalComponent
         isMenuModal={this.isMenuModal}
-        onCloseMenu={this.handleCloseMenu}
+        onMenuClose={this.handleMenuClose}
       />
     );
   }

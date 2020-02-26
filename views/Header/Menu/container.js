@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { MENU_MODAL } from '../../../constants/menu';
-import { menuStatus as menuStatusAction } from '../../../state/menu/actions';
-import MenuComponent from './component';
+import { SIDEBAR } from '../../../constants/sidebar';
+import { sidebarStatus as sidebarStatusAction } from '../../../state/sidebar/actions';
+import SidebarComponent from './component';
 
-class MenuContainer extends Component {
-  handleMenuOpen = () => {
-    const { menuStatus } = this.props;
-    menuStatus(MENU_MODAL.open);
+class SidebarContainer extends Component {
+  handleSidebarOpen = () => {
+    const { sidebarStatus } = this.props;
+    sidebarStatus(SIDEBAR.open);
   }
 
   render() {
     return (
-      <MenuComponent
-        onMenuOpen={this.handleMenuOpen}
+      <SidebarComponent
+        onSidebarOpen={this.handleSidebarOpen}
       />
     );
   }
 }
 
 const mapDispatchToProps = {
-  menuStatus: menuStatusAction,
+  sidebarStatus: sidebarStatusAction,
 };
 
-export default connect(null, mapDispatchToProps)(MenuContainer);
+export default connect(null, mapDispatchToProps)(SidebarContainer);

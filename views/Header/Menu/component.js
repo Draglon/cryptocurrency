@@ -4,10 +4,10 @@ import { StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const MenuComponent = ({ onMenuOpen }) => (
+const SidebarComponent = ({ onSidebarOpen }) => (
   <Button
     containerStyle={styles.btn}
-    onPress={onMenuOpen}
+    onPress={onSidebarOpen}
     icon={(
       <Icon
         name="bars"
@@ -18,11 +18,11 @@ const MenuComponent = ({ onMenuOpen }) => (
   />
 );
 
-MenuComponent.propTypes = {
-  onMenuOpen: PropTypes.func.isRequired,
+SidebarComponent.propTypes = {
+  onSidebarOpen: PropTypes.func.isRequired,
 };
 
-export default MenuComponent;
+export default SidebarComponent;
 
 const styles = StyleSheet.create({
   btn: {

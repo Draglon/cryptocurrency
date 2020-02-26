@@ -11,7 +11,15 @@ const persistConfig = {
   storage,
 };
 
-const initialState = {};
+const initialState = {
+  // intl: {
+  //   locale: 'en',
+  //   messages: {
+  //     'app.Hello': 'Hello!',
+  //   },
+  // },
+};
+
 const middleware = [thunk];
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(

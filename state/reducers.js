@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import menuReducer from './menu/reducers';
+import sidebarReducer from './sidebar';
+import intlReducer from './intl';
 
 export default combineReducers({
-  menu: menuReducer,
+  sidebar: sidebarReducer,
+  intl: intlReducer,
 });

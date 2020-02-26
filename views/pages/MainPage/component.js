@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { Avatar } from 'react-native-elements';
 
-import CurrencyField from '../../shared/CurrencyField';
+// import CurrencyField from '../../shared/CurrencyField';
 
 export default function MySets() {
-  const [value, onChangeText] = React.useState('Useless Placeholder');
+  // const [value, onChangeText] = React.useState('Useless Placeholder');
 
   return (
     <View>
@@ -13,7 +13,7 @@ export default function MySets() {
         <Text>Default set</Text>
         <Button
           title="Add to list"
-          onPress={() => Alert.alert('Simple Button pressed')}
+          // onPress={() => Alert.alert('Simple Button pressed')}
         />
       </View>
 
@@ -24,9 +24,8 @@ export default function MySets() {
         <CurrencyField />
       </View> */}
 
-      
       <View>
-        <Text >Avatar</Text>
+        <Text>Avatar</Text>
         <Avatar
           rounded
           source={{

@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { Text, View, Button } from 'react-native';
 
 import CurrencyField from '../../shared/CurrencyField';
 
 export default function MainPage() {
-  const [value, onChangeText] = React.useState('Useless Placeholder');
+  // const [value, onChangeText] = React.useState('Useless Placeholder');
 
   return (
     <View>
@@ -12,7 +12,7 @@ export default function MainPage() {
         <Text>Default set</Text>
         <Button
           title="Add to list"
-          onPress={() => Alert.alert('Simple Button pressed')}
+          // onPress={() => Alert.alert('Simple Button pressed')}
         />
       </View>
 

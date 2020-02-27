@@ -1,33 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  StyleSheet, View, Button, Dimensions,
-} from 'react-native';
+import { View, Dimensions } from 'react-native';
+import { Button, Icon } from 'react-native-elements';
 
 const { height, width } = Dimensions.get('window');
-
-const SidebarComponent = ({ onSetsPage, onSidebarClose, isSidebarOpen }) => (
-  <View style={animateSidebar(isSidebarOpen)}>
-    <Icon
-      name="times"
-      style={styles.iconClose}
-      onPress={onSidebarClose}
-    />
-    <Button
-      title="My sets"
-      onPress={onSetsPage}
-    />
-  </View>
-);
-
-SidebarComponent.propTypes = {
-  onSetsPage: PropTypes.func.isRequired,
-  onSidebarClose: PropTypes.func.isRequired,
-  isSidebarOpen: PropTypes.bool.isRequired,
-};
-
-export default SidebarComponent;
 
 const animateSidebar = (isSidebarOpen) => ({
   backgroundColor: '#fff',
@@ -41,17 +17,37 @@ const animateSidebar = (isSidebarOpen) => ({
   transitionProperty: 'left',
 });
 
-const styles = StyleSheet.create({
-  iconClose: {
-    backgroundColor: '#ccc',
-    color: '#000',
-    fontSize: 18,
-    position: 'absolute',
-    top: 10,
-    right: 10,
-    width: 30,
-    height: 30,
-    lineHeight: 30,
-    textAlign: 'center',
-  },
-});
+const SidebarComponent = ({
+  isSidebarOpen,
+  onSidebarClose,
+  onSetsPage,
+  onUpdateTheme,
+}) => (
+  <View style={animateSidebar(isSidebarOpen)}>
+    <Icon
+      name="times"
+      onPress={onSidebarClose}
+    />
+    <Button
+      title="My sets"
+      onPress={onSetsPage}
+    />
+    <Button
+      title="Light"
+      onPress={onUpdateTheme('light')}
+    />
+    <Button
+      title="Dark"
+      onPress={onUpdateTheme('dark')}
+    />
+  </View>
+);
+
+SidebarComponent.propTypes = {
+  onSetsPage: PropTypes.func.isRequired,
+  onSidebarClose: PropTypes.func.isRequired,
+  onUpdateTheme: PropTypes.func.isRequired,
+  isSidebarOpen: PropTypes.bool.isRequired,
+};
+
+export default SidebarComponent;

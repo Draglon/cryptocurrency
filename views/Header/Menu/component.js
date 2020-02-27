@@ -1,20 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
-import { Button } from 'react-native-elements';
-// import Icon from 'react-native-vector-icons/FontAwesome';
+import { Button, Icon } from 'react-native-elements';
 
 const SidebarComponent = ({ onSidebarOpen }) => (
   <Button
-    containerStyle={styles.btn}
+    containerStyle={styles.btnMenu}
     onPress={onSidebarOpen}
-    // icon={(
-    //   <Icon
-    //     name="bars"
-    //     size={15}
-    //     color="white"
-    //   />
-    // )}
+    icon={(<Icon name="bars" />)}
   />
 );
 
@@ -25,8 +18,8 @@ SidebarComponent.propTypes = {
 export default SidebarComponent;
 
 const styles = StyleSheet.create({
-  btn: {
-    flex: 1,
+  btnMenu: {
+    backgroundColor: 'blue',
     width: 50,
     height: 30,
   },

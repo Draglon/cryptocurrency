@@ -6,7 +6,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint *.js **/*.js"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:circle": "jest --coverage --maxWorkers=3",
+    "lint": "eslint --format codeframe ./"
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.6",
@@ -22,13 +25,17 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "1.7.0",
     "expo": "^36.0.2",
+    "intl": "^1.2.5",
+    "intl-locales-supported": "^1.8.4",
+    "intl-messageformat": "^7.8.4",
+    "jest": "^25.1.0",
     "prop-types": "^15.7.2",
     "react": "~16.9.0",
-    "react-dom": "~16.9.0",
     "react-intl": "^3.12.0",
+    "react-intl-formatted-duration": "^3.1.0",
     "react-intl-redux": "^2.2.0",
     "react-native": "^0.61.5",
-    "react-native-elements": "https://github.com/react-native-training/react-native-elements.git#next",
+    "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "~1.5.0",
     "react-native-reanimated": "~1.4.0",
     "react-native-safe-area-context": "0.6.0",
@@ -44,7 +51,23 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "babel-preset-expo": "~8.0.0"
+    "babel-preset-expo": "~8.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
+    "jest-expo": "^36.0.1",
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.13.0"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jestSetup.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+    ]
   },
   "private": true
 }

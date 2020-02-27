@@ -1,27 +1,29 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Header } from 'react-native-elements';
+import { StyleSheet, View } from 'react-native';
 
 import Logo from './Logo';
 import Menu from './Menu';
-import Content from './Content';
 
 const HeaderComponent = () => (
-  <Header containerStyle={styles.header}>
+  <View style={styles.header}>
     <Logo />
-    <Content />
     <Menu />
-  </Header>
+  </View>
 );
 
 export default HeaderComponent;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#fff',
+    backgroundColor: '#272736',
     borderBottomWidth: 1,
     borderStyle: 'solid',
     borderBottomColor: '#666',
-    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
+    height: 70,
   },
 });

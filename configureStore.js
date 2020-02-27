@@ -4,7 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import thunk from 'redux-thunk';
 
-import enLocale from './locales/en';
+// import enLocale from './locales/en';
 import rootReducer from './state/reducers';
 
 const persistConfig = {
@@ -31,5 +31,3 @@ export {
   store,
   persistor,
 };
-
-// "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",

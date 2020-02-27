@@ -1,3 +1,3 @@
-// import { intlReducer } from 'react-intl-redux';
+import { intlReducer } from 'react-intl-redux';
 
-// export default intlReducer;
+export default intlReducer;

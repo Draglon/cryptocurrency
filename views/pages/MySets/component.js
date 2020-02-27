@@ -3,13 +3,13 @@ import {
   StyleSheet, Text, View, ScrollView,
 } from 'react-native';
 
-import Header from '../../Header';
-import Sidebar from '../../modals/Sidebar';
+// import Header from '../../Header';
+// import Sidebar from '../../modals/Sidebar';
 
 const MySets = ({ navigation }) => (
   <View style={styles.main}>
-    <Header />
-    <Sidebar navigation={navigation} />
+    {/* <Header />
+    <Sidebar navigation={navigation} /> */}
     <View style={styles.page}>
       <ScrollView>
         <View style={styles.layout}>

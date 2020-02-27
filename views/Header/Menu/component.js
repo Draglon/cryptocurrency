@@ -2,19 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SidebarComponent = ({ onSidebarOpen }) => (
   <Button
     containerStyle={styles.btn}
     onPress={onSidebarOpen}
-    icon={(
-      <Icon
-        name="bars"
-        size={15}
-        color="white"
-      />
-    )}
+    // icon={(
+    //   <Icon
+    //     name="bars"
+    //     size={15}
+    //     color="white"
+    //   />
+    // )}
   />
 );
 

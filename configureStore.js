@@ -12,17 +12,17 @@ const persistConfig = {
   storage: AsyncStorage,
 };
 
-const initialState = {
-  intl: {
-    ...enLocale,
-  },
-};
+// const initialState = {
+//   intl: {
+//     ...enLocale,
+//   },
+// };
 
 const middleware = [thunk];
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(
   persistedReducer,
-  initialState,
+  // initialState,
   composeWithDevTools(applyMiddleware(...middleware))
 );
 const persistor = persistStore(store);

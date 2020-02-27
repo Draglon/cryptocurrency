@@ -1,14 +1,3 @@
-import enLocale from '../../locales/en';
-
-const initialState = {
-  ...enLocale,
-};
-
-const intlReducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+import { intlReducer } from 'react-intl-redux';
 
 export default intlReducer;

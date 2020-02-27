@@ -44,7 +44,6 @@ const animateSidebar = (isSidebarOpen) => ({
 const styles = StyleSheet.create({
   iconClose: {
     backgroundColor: '#ccc',
-    cursor: 'pointer',
     color: '#000',
     fontSize: 18,
     position: 'absolute',

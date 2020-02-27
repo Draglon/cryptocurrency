@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withTheme } from 'react-native-elements';
 
-import THEME from '../../../themes';
+import { THEMES } from '../../../themes';
 import { SIDEBAR } from '../../../constants/sidebar';
 import { setTypeTheme as setTypeThemeAction } from '../../../state/theme/actions';
 import { sidebarStatus as sidebarStatusAction } from '../../../state/sidebar/actions';
@@ -32,14 +32,13 @@ class SidebarContainer extends Component {
   handleUpdateTheme = (typeTheme) => () => {
     const { setTypeTheme, replaceTheme } = this.props;
 
-    replaceTheme(THEME[typeTheme]);
+    replaceTheme(THEMES[typeTheme]);
     setTypeTheme(typeTheme);
   }
 
   render() {
     return (
       <SidebarComponent
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...this.props}
         isSidebarOpen={this.isSidebarOpen}
         onSidebarClose={this.handleSidebarClose}

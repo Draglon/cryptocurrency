@@ -1,2 +1,1 @@
-// eslint-disable-next-line import/prefer-default-export
-export const themeTypeSelector = (state) => state.themeProvider;
+export const themeSelector = (state) => state.theme;

@@ -5,7 +5,7 @@ import themeReducer from './theme';
 import sidebarReducer from './sidebar';
 
 export default combineReducers({
-  themeProvider: themeReducer,
+  theme: themeReducer,
   sidebar: sidebarReducer,
   // intl: intlReducer,
 });

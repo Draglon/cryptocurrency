@@ -4,14 +4,14 @@ import { ThemeProvider } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import THEME from '../../themes';
+import { THEMES } from '../../themes';
 import MainPage from '../pages/MainPage';
 import MySets from '../pages/MySets';
 
 const Stack = createStackNavigator();
 
-const Layout = ({ themeType }) => (
-  <ThemeProvider theme={THEME[themeType]}>
+const Layout = ({ theme }) => (
+  <ThemeProvider theme={THEMES[theme]}>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="MainPage" component={MainPage} />

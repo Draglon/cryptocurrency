@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { SIDEBAR } from '../../../constants/sidebar';
 import { sidebarStatus as sidebarStatusAction } from '../../../state/sidebar/actions';
-import SidebarComponent from './component';
+import MenuButtonComponent from './component';
 
-class SidebarContainer extends Component {
+class MenuButtonContainer extends Component {
+  static propTypes = {
+    sidebarStatus: PropTypes.func.isRequired,
+  };
+
   handleSidebarOpen = () => {
     const { sidebarStatus } = this.props;
     sidebarStatus(SIDEBAR.open);
@@ -13,7 +18,7 @@ class SidebarContainer extends Component {
 
   render() {
     return (
-      <SidebarComponent
+      <MenuButtonComponent
         onSidebarOpen={this.handleSidebarOpen}
       />
     );
@@ -24,4 +29,4 @@ const mapDispatchToProps = {
   sidebarStatus: sidebarStatusAction,
 };
 
-export default connect(null, mapDispatchToProps)(SidebarContainer);
+export default connect(null, mapDispatchToProps)(MenuButtonContainer);

@@ -1,18 +1,18 @@
 import React from 'react';
-import {
-  StyleSheet, Text, View, ScrollView,
-} from 'react-native';
+import PropTypes from 'prop-types';
+import { Text, View, ScrollView } from 'react-native';
+import { withTheme } from 'react-native-elements';
 
 import Header from '../../Header';
 import Sidebar from '../../modals/Sidebar';
 
-const MySets = ({ navigation }) => (
-  <View style={styles.main}>
+const MySets = ({ navigation, theme }) => (
+  <View style={theme.Page.main}>
     <Header />
     <Sidebar navigation={navigation} />
-    <View style={styles.page}>
+    <View style={theme.Page.page}>
       <ScrollView>
-        <View style={styles.layout}>
+        <View style={theme.Page.layout}>
           <Text>My Sets</Text>
         </View>
       </ScrollView>
@@ -20,18 +20,15 @@ const MySets = ({ navigation }) => (
   </View>
 );
 
-export default MySets;
+MySets.propTypes = {
+  navigation: PropTypes.shape({}).isRequired,
+  theme: PropTypes.shape({
+    Page: PropTypes.shape({
+      main: PropTypes.shape({}).isRequired,
+      page: PropTypes.shape({}).isRequired,
+      layout: PropTypes.shape({}).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
-const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    alignItems: 'stretch',
-  },
-  page: {
-    backgroundColor: '#999999',
-  },
-  layout: {
-    backgroundColor: '#ccc',
-    alignItems: 'stretch',
-  },
-});
+export default withTheme(MySets);

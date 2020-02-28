@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withTheme } from 'react-native-elements';
 
@@ -10,6 +11,16 @@ import { sidebarSelector } from '../../../state/sidebar/selectors';
 import SidebarComponent from './component';
 
 class SidebarContainer extends Component {
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }).isRequired,
+    sidebar: PropTypes.string.isRequired,
+    sidebarStatus: PropTypes.func.isRequired,
+    setTypeTheme: PropTypes.func.isRequired,
+    replaceTheme: PropTypes.func.isRequired,
+  };
+
   get isSidebarOpen() {
     const { sidebar } = this.props;
 

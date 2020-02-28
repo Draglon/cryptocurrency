@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -20,5 +21,9 @@ const Layout = ({ theme }) => (
     </NavigationContainer>
   </ThemeProvider>
 );
+
+Layout.propTypes = {
+  theme: PropTypes.string.isRequired,
+};
 
 export default Layout;

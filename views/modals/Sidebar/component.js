@@ -18,6 +18,7 @@ const animateSidebar = (isSidebarOpen) => ({
 });
 
 const SidebarComponent = ({
+  // theme,
   isSidebarOpen,
   onSidebarClose,
   onSetsPage,
@@ -44,6 +45,7 @@ const SidebarComponent = ({
 );
 
 SidebarComponent.propTypes = {
+  theme: PropTypes.shape({}).isRequired,
   onSetsPage: PropTypes.func.isRequired,
   onSidebarClose: PropTypes.func.isRequired,
   onUpdateTheme: PropTypes.func.isRequired,

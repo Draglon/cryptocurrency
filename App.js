@@ -16,7 +16,7 @@ const App = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       {/* <IntlProvider locale={locale} messages={messages}> */}
-        <Layout />
+      <Layout />
       {/* </IntlProvider> */}
     </PersistGate>
   </Provider>

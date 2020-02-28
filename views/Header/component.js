@@ -1,29 +1,24 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
+import { View } from 'react-native';
+import { withTheme } from 'react-native-elements';
 
 import Logo from './Logo';
 import Menu from './Menu';
 
-const HeaderComponent = () => (
-  <View style={styles.header}>
+const HeaderComponent = ({ theme }) => (
+  <View style={theme.Header.style}>
     <Logo />
     <Menu />
   </View>
 );
 
-export default HeaderComponent;
+HeaderComponent.propTypes = {
+  theme: PropTypes.shape({
+    Header: PropTypes.shape({
+      style: PropTypes.shape({}).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: '#272736',
-    borderBottomWidth: 1,
-    borderStyle: 'solid',
-    borderBottomColor: '#666',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingLeft: 10,
-    paddingRight: 10,
-    height: 70,
-  },
-});
+export default withTheme(HeaderComponent);

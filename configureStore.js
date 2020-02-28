@@ -23,7 +23,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(
   persistedReducer,
   // initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+  composeWithDevTools(applyMiddleware(...middleware)),
 );
 const persistor = persistStore(store);
 

@@ -1,20 +1,22 @@
 import React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import PropTypes from 'prop-types';
+import { withTheme, Image } from 'react-native-elements';
 
 import logo from '../../../assets/images/logo.png';
 
-const Logo = () => (
+const Logo = ({ theme }) => (
   <Image
     source={logo}
-    style={styles.logo}
+    containerStyle={theme.Logo.style}
   />
 );
 
-export default Logo;
+Logo.propTypes = {
+  theme: PropTypes.shape({
+    Logo: PropTypes.shape({
+      style: PropTypes.shape({}).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
-const styles = StyleSheet.create({
-  logo: {
-    width: 100,
-    height: 40,
-  },
-});
+export default withTheme(Logo);

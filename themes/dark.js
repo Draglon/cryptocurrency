@@ -1,3 +1,5 @@
+import { COLORS } from '../constants/variables';
+
 export default {
   // React Native Elements
   Button: {
@@ -5,7 +7,7 @@ export default {
       width: 150,
     },
     titleStyle: {
-      color: '#00f',
+      color: COLORS.white,
     },
   },
   Icon: {
@@ -14,10 +16,48 @@ export default {
   },
 
   // Custom Elements
+  Header: {
+    style: {
+      backgroundColor: COLORS.gray,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingLeft: 10,
+      paddingRight: 10,
+      height: 70,
+    },
+  },
+  Logo: {
+    style: {
+      width: 100,
+      height: 40,
+    },
+  },
+  MenuButton: {
+    style: {
+      width: 50,
+      height: 30,
+    },
+    iconColor: COLORS.white,
+  },
+  Page: {
+    main: {
+      flex: 1,
+      alignItems: 'stretch',
+    },
+    page: {
+      flex: 1,
+      backgroundColor: COLORS.dark,
+    },
+    layout: {
+      flex: 1,
+      backgroundColor: COLORS.dark,
+      alignItems: 'stretch',
+    },
+  },
   IconClose: {
     containerStyle: {
-      backgroundColor: '#ccc',
-      color: '#f00',
+      color: COLORS.gray,
       position: 'absolute',
       top: 10,
       right: 10,
@@ -26,5 +66,5 @@ export default {
       lineHeight: 30,
       textAlign: 'center',
     },
-  }
+  },
 };

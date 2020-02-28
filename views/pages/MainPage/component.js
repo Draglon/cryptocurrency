@@ -1,19 +1,19 @@
 import React from 'react';
-import {
-  StyleSheet, Text, View, ScrollView,
-} from 'react-native';
+import PropTypes from 'prop-types';
+import { Text, View, ScrollView } from 'react-native';
+import { withTheme } from 'react-native-elements';
 
 import Header from '../../Header';
 import Sidebar from '../../modals/Sidebar';
 // import CurrencyField from '../../shared/CurrencyField';
 
-const MainPage = ({ navigation }) => (
-  <View style={styles.main}>
+const MainPage = ({ navigation, theme }) => (
+  <View style={theme.Page.main}>
     <Header />
     <Sidebar navigation={navigation} />
-    <View style={styles.page}>
+    <View style={theme.Page.page}>
       <ScrollView>
-        <View style={styles.layout}>
+        <View style={theme.Page.layout}>
           <Text>Default set</Text>
         </View>
       </ScrollView>
@@ -21,41 +21,15 @@ const MainPage = ({ navigation }) => (
   </View>
 );
 
-export default MainPage;
+MainPage.propTypes = {
+  navigation: PropTypes.shape({}).isRequired,
+  theme: PropTypes.shape({
+    Page: PropTypes.shape({
+      main: PropTypes.shape({}).isRequired,
+      page: PropTypes.shape({}).isRequired,
+      layout: PropTypes.shape({}).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
-const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    alignItems: 'stretch',
-  },
-  page: {
-    backgroundColor: '#999999',
-  },
-  layout: {
-    backgroundColor: '#ccc',
-    alignItems: 'stretch',
-  },
-});
-
-// export default function MySets() {
-//   // const [value, onChangeText] = React.useState('Useless Placeholder');
-
-//   return (
-//     <View>
-//       <View>
-//         <Text>Default set</Text>
-//         {/* <Button
-//           title="Add to list"
-//           // onPress={() => Alert.alert('Simple Button pressed')}
-//         /> */}
-//       </View>
-
-//       {/* <View>
-//         <CurrencyField />
-//         <CurrencyField />
-//         <CurrencyField />
-//         <CurrencyField />
-//       </View> */}
-//     </View>
-//   );
-// }
+export default withTheme(MainPage);

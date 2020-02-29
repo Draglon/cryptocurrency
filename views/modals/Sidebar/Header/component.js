@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import { withTheme, Button, Icon } from 'react-native-elements';
+import { withTheme } from 'react-native-elements';
 
 import Logo from '../../../shared/Logo';
+import ButtonClose from '../../../shared/ButtonClose';
 
 const SidebarHeaderComponent = ({
   theme,
@@ -11,11 +12,7 @@ const SidebarHeaderComponent = ({
 }) => (
   <View style={theme.SidebarHeader.style}>
     <Logo />
-    <Button
-      type="clear"
-      onPress={onSidebarClose}
-      icon={(<Icon name="times" />)}
-    />
+    <ButtonClose onPress={onSidebarClose} />
   </View>
 );
 

@@ -11,13 +11,13 @@ const MenuButtonComponent = ({ theme, onSidebarOpen }) => (
 );
 
 MenuButtonComponent.propTypes = {
-  onSidebarOpen: PropTypes.func.isRequired,
   theme: PropTypes.shape({
     MenuButton: PropTypes.shape({
       style: PropTypes.shape({}).isRequired,
       iconColor: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  onSidebarOpen: PropTypes.func.isRequired,
 };
 
 export default withTheme(MenuButtonComponent);

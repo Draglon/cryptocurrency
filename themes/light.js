@@ -6,19 +6,20 @@ import logo from '../assets/images/logo.png';
 const { height, width } = Dimensions.get('window');
 
 export default {
-  // React Native Elements
+  // ================= React Native Elements =================
   Divider: {
 
   },
-  Button: {
+  // Button: {
 
-  },
+  // },
   Icon: {
     type: 'font-awesome',
     size: 18,
   },
 
-  // Custom Elements
+  // ================ Custom Elements ========================
+  // Header
   Header: {
     style: {
       backgroundColor: COLORS.gray,
@@ -30,13 +31,6 @@ export default {
       height: 70,
     },
   },
-  Logo: {
-    style: {
-      width: 100,
-      height: 40,
-    },
-    source: logo,
-  },
   MenuButton: {
     style: {
       width: 50,
@@ -44,6 +38,7 @@ export default {
     },
     iconColor: COLORS.white,
   },
+  // Pages
   Page: {
     main: {
       flex: 1,
@@ -59,6 +54,7 @@ export default {
       alignItems: 'stretch',
     },
   },
+  // Sidebar
   Sidebar: {
     style: {
       backgroundColor: COLORS.light,
@@ -78,16 +74,23 @@ export default {
       height: 70,
     },
   },
-  IconClose: {
-    containerStyle: {
-      color: COLORS.gray,
+  // Shared
+  Logo: {
+    style: {
+      width: 100,
+      height: 40,
+    },
+    source: logo,
+  },
+  ButtonClose: {
+    style: {
       position: 'absolute',
       top: 10,
       right: 10,
       width: 30,
       height: 30,
-      lineHeight: 30,
-      textAlign: 'center',
     },
+    iconName: 'times',
+    iconColor: COLORS.gray,
   },
 };

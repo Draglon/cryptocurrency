@@ -6,7 +6,7 @@ const { height, width } = Dimensions.get('window');
 
 export default {
   style: {
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.dark,
     position: 'absolute',
     top: 0,
     left: 0,

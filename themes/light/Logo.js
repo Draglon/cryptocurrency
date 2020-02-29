@@ -2,8 +2,8 @@ import logo from '../../assets/images/logo.png';
 
 export default {
   style: {
-    width: 100,
-    height: 40,
+    width: 50,
+    height: 51,
   },
   source: logo,
 };

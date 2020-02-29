@@ -7,7 +7,7 @@ const MenuComponent = ({
   theme,
   onSetsPage,
 }) => (
-  <View>
+  <View style={theme.Menu.style}>
     <Button
       title="My sets"
       type="clear"
@@ -19,7 +19,11 @@ const MenuComponent = ({
 );
 
 MenuComponent.propTypes = {
-  theme: PropTypes.shape({}).isRequired,
+  theme: PropTypes.shape({
+    Menu: PropTypes.shape({
+      style: PropTypes.shape({}).isRequired,
+    }).isRequired,
+  }).isRequired,
   onSetsPage: PropTypes.func.isRequired,
 };
 

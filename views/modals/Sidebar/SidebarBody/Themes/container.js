@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withTheme } from 'react-native-elements';
 
-import { THEMES } from '../../../../themes';
-import { setTypeTheme as setTypeThemeAction } from '../../../../state/theme/actions';
+import { THEMES } from '../../../../../themes';
+import { setTypeTheme as setTypeThemeAction } from '../../../../../state/theme/actions';
 import ThemesComponent from './component';
 
 class ThemesContainer extends Component {

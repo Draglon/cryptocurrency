@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import LanguagesComponent from './component';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class LanguagesContainer extends Component {
   render() {
     return (
@@ -13,7 +14,7 @@ class LanguagesContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = () => ({
 
 });
 

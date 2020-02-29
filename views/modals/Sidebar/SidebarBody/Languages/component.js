@@ -4,9 +4,9 @@ import { View } from 'react-native';
 import { withTheme, Button } from 'react-native-elements';
 
 const LanguagesComponent = ({
-  // theme,
+  theme,
 }) => (
-  <View>
+  <View style={theme.Languages.style}>
     <Button
       title="Light"
       // onPress={}
@@ -19,7 +19,11 @@ const LanguagesComponent = ({
 );
 
 LanguagesComponent.propTypes = {
-  theme: PropTypes.shape({}).isRequired,
+  theme: PropTypes.shape({
+    Languages: PropTypes.shape({
+      style: PropTypes.shape({}).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default withTheme(LanguagesComponent);

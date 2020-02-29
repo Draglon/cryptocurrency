@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import { withTheme, Divider } from 'react-native-elements';
+import { withTheme } from 'react-native-elements';
 
-import SidebarHeader from './Header';
-import Menu from './Menu';
-import Themes from './Themes';
+import SidebarHeader from './SidebarHeader';
+import SidebarBody from './SidebarBody';
 
 const SidebarComponent = ({
   theme,
@@ -14,10 +13,7 @@ const SidebarComponent = ({
 }) => (
   <View style={{ ...theme.Sidebar.style, left: isSidebarOpen ? 0 : '-100%' }}>
     <SidebarHeader />
-    <Menu navigation={navigation} />
-    <Divider />
-    <Themes />
-    <Divider />
+    <SidebarBody navigation={navigation} />
   </View>
 );
 

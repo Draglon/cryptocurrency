@@ -22,7 +22,6 @@ class SidebarContainer extends Component {
       <SidebarComponent
         {...this.props}
         isSidebarOpen={this.isSidebarOpen}
-        onSidebarClose={this.handleSidebarClose}
       />
     );
   }

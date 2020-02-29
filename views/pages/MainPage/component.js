@@ -14,26 +14,16 @@ const MainPage = ({ navigation, theme, onAddToSet }) => (
     <View style={theme.Page.page}>
       <ScrollView>
         <View style={theme.Page.layout}>
+          <Text h1>Default set</Text>
+          <Text h2>Default set</Text>
+          <Text h3>Default set</Text>
+          <Text h4>Default set</Text>
           <Text>Default set</Text>
+
           <ButtonPrimary
-            type="outline"
             size="small"
             title="Add to set"
             onPress={onAddToSet}
-            raised
-          />
-
-          <ButtonPrimary
-            type="clear"
-            size="large"
-            title="Add to set"
-            onPress={onAddToSet}
-          />
-
-          <ButtonPrimary
-            title="Add to set"
-            onPress={onAddToSet}
-            raised
           />
         </View>
       </ScrollView>

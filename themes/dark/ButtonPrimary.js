@@ -1,4 +1,4 @@
-import { COLORS } from '../../constants/variables';
+// import { COLORS } from '../../constants/variables';
 
 export default {
   // Middle Button - default

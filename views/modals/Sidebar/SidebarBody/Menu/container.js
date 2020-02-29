@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { SIDEBAR } from '../../../../constants/sidebar';
-import { PAGES } from '../../../../constants/pages';
-import { sidebarStatus as sidebarStatusAction } from '../../../../state/sidebar/actions';
+import { SIDEBAR } from '../../../../../constants/sidebar';
+import { PAGES } from '../../../../../constants/pages';
+import { sidebarStatus as sidebarStatusAction } from '../../../../../state/sidebar/actions';
 import MenuComponent from './component';
 
 class MenuContainer extends Component {

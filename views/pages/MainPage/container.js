@@ -4,7 +4,7 @@ import MainPageComponent from './component';
 
 class MainPageContainer extends Component {
   handleAddToSet = () => {
-    console.log('click');
+
   }
 
   render() {

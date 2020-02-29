@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native';
 
-import { COLORS } from '../constants/variables';
-import logo from '../assets/images/logo.png';
+import { COLORS } from '../../constants/variables';
+import logo from '../../assets/images/logo.png';
 
 const { height, width } = Dimensions.get('window');
 
@@ -46,18 +46,18 @@ export default {
     },
     page: {
       flex: 1,
-      backgroundColor: COLORS.light,
+      backgroundColor: COLORS.dark,
     },
     layout: {
       flex: 1,
-      backgroundColor: COLORS.light,
+      backgroundColor: COLORS.dark,
       alignItems: 'stretch',
     },
   },
   // Sidebar
   Sidebar: {
     style: {
-      backgroundColor: COLORS.light,
+      backgroundColor: '#fff',
       position: 'absolute',
       top: 0,
       left: 0,

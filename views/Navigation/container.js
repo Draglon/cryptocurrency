@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 
 // import enLocale from '../../locales/en';
 import { themeSelector } from '../../state/theme/selectors';
-import LayoutComponent from './component';
+import NavigationComponent from './component';
 
-class LayoutContainer extends Component {
+class NavigationContainer extends Component {
   componentDidMount() {
     // const { updateIntl } = this.props;
     // updateIntl(enLocale);
@@ -14,7 +14,7 @@ class LayoutContainer extends Component {
 
   render() {
     return (
-      <LayoutComponent {...this.props} />
+      <NavigationComponent {...this.props} />
     );
   }
 }
@@ -27,4 +27,4 @@ const mapDispatchToProps = {
   // updateIntl: updateIntlAction,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LayoutContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationContainer);

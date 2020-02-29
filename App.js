@@ -8,7 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { persistor, store } from './configureStore';
 // import enLocale from './locales/en';
-import Layout from './views/Layout';
+import Navigation from './views/Navigation';
 
 // const { locale, messages } = enLocale;
 
@@ -16,7 +16,7 @@ const App = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       {/* <IntlProvider locale={locale} messages={messages}> */}
-      <Layout />
+      <Navigation />
       {/* </IntlProvider> */}
     </PersistGate>
   </Provider>

@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTheme, Image } from 'react-native-elements';
 
-import logo from '../../../assets/images/logo.png';
-
 const Logo = ({ theme }) => (
   <Image
-    source={logo}
+    source={theme.Logo.source}
     containerStyle={theme.Logo.style}
   />
 );
@@ -14,6 +12,7 @@ const Logo = ({ theme }) => (
 Logo.propTypes = {
   theme: PropTypes.shape({
     Logo: PropTypes.shape({
+      source: PropTypes.any.isRequired,
       style: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,

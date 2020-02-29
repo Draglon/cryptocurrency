@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { withTheme } from 'react-native-elements';
 
-import Logo from './Logo';
-import Menu from './Menu';
+import Logo from '../shared/Logo';
+import MenuButton from './MenuButton';
 
 const HeaderComponent = ({ theme }) => (
   <View style={theme.Header.style}>
     <Logo />
-    <Menu />
+    <MenuButton />
   </View>
 );
 

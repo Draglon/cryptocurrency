@@ -7,7 +7,13 @@ const ButtonClose = ({ theme, onPress }) => (
     containerStyle={theme.ButtonClose.style}
     type="clear"
     onPress={onPress}
-    icon={(<Icon name={theme.ButtonClose.iconName} color={theme.ButtonClose.iconColor} />)}
+    icon={(
+      <Icon
+        name={theme.ButtonClose.iconName}
+        size={theme.ButtonClose.iconSize}
+        color={theme.ButtonClose.iconColor}
+      />
+    )}
   />
 );
 
@@ -16,6 +22,7 @@ ButtonClose.propTypes = {
     ButtonClose: PropTypes.shape({
       style: PropTypes.shape({}).isRequired,
       iconName: PropTypes.string.isRequired,
+      iconSize: PropTypes.number.isRequired,
       iconColor: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,

@@ -2,20 +2,20 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import { THEMES } from '../../../../themes';
-import ButtonClose from '../component';
+import ButtonPrimary from '../component';
 
-describe('ButtonClose component matches snapshot', () => {
+describe('ButtonPrimary component matches snapshot', () => {
   const defaultProps = {
     theme: {
-      ButtonClose: {
-        ...THEMES.light.ButtonClose,
+      ButtonPrimary: {
+        ...THEMES.light.ButtonPrimary,
       },
     },
     onPress: jest.fn(),
   };
 
   it('with default props', () => {
-    const wrapper = renderer.create(<ButtonClose {...defaultProps} />).toJSON();
+    const wrapper = renderer.create(<ButtonPrimary {...defaultProps} />).toJSON();
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -24,12 +24,12 @@ describe('ButtonClose component matches snapshot', () => {
     const props = {
       ...defaultProps,
       theme: {
-        ButtonClose: {
-          ...THEMES.dark.ButtonClose,
+        ButtonPrimary: {
+          ...THEMES.dark.ButtonPrimary,
         },
       },
     };
-    const wrapper = renderer.create(<ButtonClose {...props} />).toJSON();
+    const wrapper = renderer.create(<ButtonPrimary {...props} />).toJSON();
 
     expect(wrapper).toMatchSnapshot();
   });

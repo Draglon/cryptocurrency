@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, ScrollView } from 'react-native';
-import { withTheme } from 'react-native-elements';
+import { ScrollView, View } from 'react-native';
+import { withTheme, Text } from 'react-native-elements';
 
+import ButtonPrimary from '../../shared/ButtonPrimary';
 import Header from '../../Header';
 import Sidebar from '../../modals/Sidebar';
-// import CurrencyField from '../../shared/CurrencyField';
 
-const MainPage = ({ navigation, theme }) => (
+const MainPage = ({ navigation, theme, onAddToSet }) => (
   <View style={theme.Page.main}>
     <Header />
     <Sidebar navigation={navigation} />
@@ -15,6 +15,26 @@ const MainPage = ({ navigation, theme }) => (
       <ScrollView>
         <View style={theme.Page.layout}>
           <Text>Default set</Text>
+          <ButtonPrimary
+            type="outline"
+            size="small"
+            title="Add to set"
+            onPress={onAddToSet}
+            raised
+          />
+
+          <ButtonPrimary
+            type="clear"
+            size="large"
+            title="Add to set"
+            onPress={onAddToSet}
+          />
+
+          <ButtonPrimary
+            title="Add to set"
+            onPress={onAddToSet}
+            raised
+          />
         </View>
       </ScrollView>
     </View>
@@ -30,6 +50,7 @@ MainPage.propTypes = {
       layout: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
+  onAddToSet: PropTypes.func.isRequired,
 };
 
 export default withTheme(MainPage);

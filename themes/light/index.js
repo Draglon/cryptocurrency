@@ -2,12 +2,12 @@ import { COLORS } from '../../constants/variables';
 
 import Header from './Header';
 import MenuButton from './MenuButton';
-import Sidebar from './Sidebar';
-import SidebarHeader from './SidebarHeader';
-import SidebarBody from './SidebarBody';
-import Menu from './Menu';
-import Themes from './Themes';
-import Languages from './Languages';
+import {
+  Sidebar, SidebarHeader, SidebarBody, SidebarWrapper,
+} from './Sidebar';
+import { Menu, MenuItem, MenuItemIcon } from './Menu';
+import { Themes, ThemesItem } from './Themes';
+import { Languages, LanguagesItem } from './Languages';
 import Page from './Page';
 import Logo from './Logo';
 import ButtonPrimary from './ButtonPrimary';
@@ -51,9 +51,14 @@ export default {
   Sidebar,
   SidebarHeader,
   SidebarBody,
+  SidebarWrapper,
   Menu,
+  MenuItem,
+  MenuItemIcon,
   Themes,
+  ThemesItem,
   Languages,
+  LanguagesItem,
   // Shared
   Logo,
   ButtonPrimary,

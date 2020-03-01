@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Layout from '../Layout';
 import MainPageComponent from './component';
 
 class MainPageContainer extends Component {
@@ -17,4 +18,4 @@ class MainPageContainer extends Component {
   }
 }
 
-export default MainPageContainer;
+export default Layout(MainPageContainer);

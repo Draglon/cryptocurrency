@@ -9,6 +9,7 @@ import { THEMES } from '../../themes';
 import { PAGES } from '../../constants/pages';
 import MainPage from '../pages/MainPage';
 import MySets from '../pages/MySets';
+import CreateSet from '../pages/CreateSet';
 
 const Stack = createStackNavigator();
 
@@ -16,8 +17,21 @@ const NavigationComponent = ({ theme }) => (
   <ThemeProvider theme={THEMES[theme]}>
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name={PAGES.default} component={MainPage} />
-        <Stack.Screen name={PAGES.sets} component={MySets} />
+        <Stack.Screen
+          name={PAGES.default}
+          component={MainPage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={PAGES.sets}
+          component={MySets}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={PAGES.createSet}
+          component={CreateSet}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   </ThemeProvider>

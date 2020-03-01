@@ -16,10 +16,11 @@ const ButtonPrimary = ({
   disabled,
   raised,
   onPress,
+  customStyle,
 }) => {
   const buttonType = includes(type, BUTTON_TYPES) ? theme.ButtonPrimary[type] : {};
   const buttonSize = includes(size, BUTTON_SIZES) ? theme.ButtonPrimary[size] : {};
-  const button = mergeAll([theme.ButtonPrimary, buttonType, buttonSize]);
+  const button = mergeAll([theme.ButtonPrimary, buttonType, buttonSize, customStyle]);
 
   return (
     <Button
@@ -51,6 +52,7 @@ ButtonPrimary.defaultProps = {
   loading: false,
   disabled: false,
   raised: false,
+  customStyle: {},
 };
 
 ButtonPrimary.propTypes = {
@@ -75,6 +77,7 @@ ButtonPrimary.propTypes = {
   disabled: PropTypes.bool,
   raised: PropTypes.bool,
   onPress: PropTypes.func.isRequired,
+  customStyle: PropTypes.shape({}),
 };
 
 export default withTheme(ButtonPrimary);

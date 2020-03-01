@@ -25,15 +25,16 @@ export const SidebarHeader = {
     justifyContent: 'space-between',
     alignItems: 'center',
     alignContent: 'space-between',
-    height: 70,
+    paddingTop: 30,
     paddingLeft: 10,
     paddingRight: 10,
+    height: 100,
   },
 };
 
 export const SidebarBody = {
   style: {
-    height: height - 148,
+    height: height - 100,
   },
 };
 

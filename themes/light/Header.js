@@ -6,8 +6,9 @@ export default {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingTop: 30,
     paddingLeft: 10,
     paddingRight: 10,
-    height: 70,
+    height: 100,
   },
 };

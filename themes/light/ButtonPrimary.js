@@ -5,6 +5,8 @@ export default {
   type: 'solid',
   containerStyle: {},
   buttonStyle: {
+    paddingLeft: 15,
+    paddingRight: 15,
     height: 50,
   },
   titleStyle: {},

@@ -19,8 +19,10 @@ import ButtonClose from './ButtonClose';
 export default {
   // ================= React Native Elements =================
   Divider: {
-    backgroundColor: COLORS.white,
-    height: 2,
+    style: {
+      backgroundColor: COLORS.white,
+      height: 2,
+    },
   },
   Text: {
     h1Style: {

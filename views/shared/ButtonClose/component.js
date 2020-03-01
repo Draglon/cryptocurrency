@@ -1,29 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme, Button, Icon } from 'react-native-elements';
+import { withTheme } from 'react-native-elements';
+
+import ButtonPrimary from '../ButtonPrimary';
+import IconPrimary from '../IconPrimary';
 
 const ButtonClose = ({ theme, onPress }) => (
-  <Button
-    containerStyle={theme.ButtonClose.style}
-    type="clear"
+  <ButtonPrimary
+    customStyle={theme.ButtonClose.buttonStyle}
     onPress={onPress}
-    icon={(
-      <Icon
-        name={theme.ButtonClose.iconName}
-        size={theme.ButtonClose.iconSize}
-        color={theme.ButtonClose.iconColor}
-      />
-    )}
+    icon={(<IconPrimary {...theme.ButtonClose.iconStyle} />)}
   />
 );
 
 ButtonClose.propTypes = {
   theme: PropTypes.shape({
     ButtonClose: PropTypes.shape({
-      style: PropTypes.shape({}).isRequired,
-      iconName: PropTypes.string.isRequired,
-      iconSize: PropTypes.number.isRequired,
-      iconColor: PropTypes.string.isRequired,
+      buttonStyle: PropTypes.shape({}).isRequired,
+      iconStyle: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
   onPress: PropTypes.func.isRequired,

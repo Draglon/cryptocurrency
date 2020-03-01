@@ -10,9 +10,11 @@ export default {
     },
   },
   iconStyle: {
-    marginRight: 10,
+    iconName: 'angle-left',
+    iconSize: 24,
+    iconColor: COLORS.white,
+    iconStyle: {
+      marginRight: 10,
+    },
   },
-  iconName: 'angle-left',
-  iconSize: 24,
-  iconColor: COLORS.white,
 };

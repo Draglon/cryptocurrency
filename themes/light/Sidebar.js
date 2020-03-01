@@ -39,6 +39,7 @@ export const SidebarBody = {
 
 export const SidebarWrapper = {
   style: {
+    alignItems: 'stretch',
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 20,

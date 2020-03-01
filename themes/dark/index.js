@@ -8,7 +8,7 @@ import {
 import { Menu, MenuItem, MenuItemIcon } from './Menu';
 import { Themes, ThemesItem } from './Themes';
 import { Languages, LanguagesItem } from './Languages';
-import Page from './Page';
+import { Page, PageBody, PageWrapper } from './Page';
 import Logo from './Logo';
 import ButtonPrimary from './ButtonPrimary';
 import ButtonClose from './ButtonClose';
@@ -47,6 +47,8 @@ export default {
   MenuButton,
   // Pages
   Page,
+  PageBody,
+  PageWrapper,
   // Sidebar
   Sidebar,
   SidebarHeader,

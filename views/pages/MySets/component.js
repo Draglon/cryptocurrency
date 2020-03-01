@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, ScrollView } from 'react-native';
-import { withTheme } from 'react-native-elements';
+import { SafeAreaView, ScrollView, View } from 'react-native';
+import { withTheme, Text } from 'react-native-elements';
 
 import Header from '../../Header';
 import Sidebar from '../../modals/Sidebar';
 
 const MySets = ({ navigation, theme }) => (
-  <View style={theme.Page.main}>
+  <View style={theme.Page.style}>
     <Header />
     <Sidebar navigation={navigation} />
-    <View style={theme.Page.page}>
+    <SafeAreaView style={theme.PageBody.style}>
       <ScrollView>
-        <View style={theme.Page.layout}>
+        <View style={theme.PageWrapper.style}>
           <Text>My Sets</Text>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   </View>
 );
 
@@ -24,9 +24,13 @@ MySets.propTypes = {
   navigation: PropTypes.shape({}).isRequired,
   theme: PropTypes.shape({
     Page: PropTypes.shape({
-      main: PropTypes.shape({}).isRequired,
-      page: PropTypes.shape({}).isRequired,
-      layout: PropTypes.shape({}).isRequired,
+      style: PropTypes.shape({}).isRequired,
+    }).isRequired,
+    PageBody: PropTypes.shape({
+      style: PropTypes.shape({}).isRequired,
+    }).isRequired,
+    PageWrapper: PropTypes.shape({
+      style: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
 };

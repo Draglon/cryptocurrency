@@ -1,10 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ButtonPrimary component matches snapshot with dark theme 1`] = `
+exports[`ButtonPrimary component matches snapshot with button size 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#408EDD",
+      "borderRadius": 3,
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#2089dc",
+          "borderColor": "#2089dc",
+          "borderRadius": 3,
+          "borderWidth": 0,
+          "flexDirection": "row",
+          "height": 30,
+          "justifyContent": "center",
+          "padding": 8,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`ButtonPrimary component matches snapshot with button type 1`] = `
+<View
+  style={
+    Object {
       "borderRadius": 3,
     }
   }
@@ -33,10 +76,56 @@ exports[`ButtonPrimary component matches snapshot with dark theme 1`] = `
           "backgroundColor": "transparent",
           "borderColor": "#2089dc",
           "borderRadius": 3,
-          "borderWidth": 0,
+          "borderWidth": 0.5,
           "flexDirection": "row",
           "justifyContent": "center",
           "padding": 8,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`ButtonPrimary component matches snapshot with dark theme 1`] = `
+<View
+  style={
+    Object {
+      "borderRadius": 3,
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#2089dc",
+          "borderColor": "#2089dc",
+          "borderRadius": 3,
+          "borderWidth": 0,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "center",
+          "padding": 8,
+          "paddingLeft": 15,
+          "paddingRight": 15,
         }
       }
     />
@@ -48,7 +137,6 @@ exports[`ButtonPrimary component matches snapshot with default props 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#408EDD",
       "borderRadius": 3,
     }
   }
@@ -74,13 +162,16 @@ exports[`ButtonPrimary component matches snapshot with default props 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "transparent",
+          "backgroundColor": "#2089dc",
           "borderColor": "#2089dc",
           "borderRadius": 3,
           "borderWidth": 0,
           "flexDirection": "row",
+          "height": 50,
           "justifyContent": "center",
           "padding": 8,
+          "paddingLeft": 15,
+          "paddingRight": 15,
         }
       }
     />

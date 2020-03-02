@@ -66,7 +66,7 @@ ButtonPrimary.propTypes = {
       disabledTitleStyle: PropTypes.shape({}).isRequired,
       loadingStyle: PropTypes.shape({}).isRequired,
       iconContainerStyle: PropTypes.shape({}).isRequired,
-    }).isRequired,
+    }),
   }).isRequired,
   type: PropTypes.string,
   size: PropTypes.string,

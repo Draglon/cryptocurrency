@@ -5,11 +5,6 @@ exports[`ButtonClose component matches snapshot with dark theme 1`] = `
   style={
     Object {
       "borderRadius": 3,
-      "height": 30,
-      "position": "absolute",
-      "right": 10,
-      "top": 10,
-      "width": 30,
     }
   }
 >
@@ -33,14 +28,17 @@ exports[`ButtonClose component matches snapshot with dark theme 1`] = `
     <View
       style={
         Object {
+          "alignContent": "center",
           "alignItems": "center",
           "backgroundColor": "transparent",
           "borderColor": "#2089dc",
           "borderRadius": 3,
           "borderWidth": 0,
           "flexDirection": "row",
+          "height": 40,
           "justifyContent": "center",
           "padding": 8,
+          "width": 40,
         }
       }
     >
@@ -105,11 +103,6 @@ exports[`ButtonClose component matches snapshot with default props 1`] = `
   style={
     Object {
       "borderRadius": 3,
-      "height": 30,
-      "position": "absolute",
-      "right": 10,
-      "top": 10,
-      "width": 30,
     }
   }
 >
@@ -133,14 +126,17 @@ exports[`ButtonClose component matches snapshot with default props 1`] = `
     <View
       style={
         Object {
+          "alignContent": "center",
           "alignItems": "center",
           "backgroundColor": "transparent",
           "borderColor": "#2089dc",
           "borderRadius": 3,
           "borderWidth": 0,
           "flexDirection": "row",
+          "height": 40,
           "justifyContent": "center",
           "padding": 8,
+          "width": 40,
         }
       }
     >

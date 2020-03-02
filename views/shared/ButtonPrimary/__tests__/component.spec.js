@@ -11,7 +11,16 @@ describe('ButtonPrimary component matches snapshot', () => {
         ...THEMES.light.ButtonPrimary,
       },
     },
+    type: '',
+    size: '',
+    title: '',
+    icon: <></>,
+    iconRight: false,
+    loading: false,
+    disabled: false,
+    raised: false,
     onPress: jest.fn(),
+    customStyle: {},
   };
 
   it('with default props', () => {
@@ -23,6 +32,36 @@ describe('ButtonPrimary component matches snapshot', () => {
   it('with dark theme', () => {
     const props = {
       ...defaultProps,
+      theme: {
+        ButtonPrimary: {
+          ...THEMES.dark.ButtonPrimary,
+        },
+      },
+    };
+    const wrapper = renderer.create(<ButtonPrimary {...props} />).toJSON();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('with button type', () => {
+    const props = {
+      ...defaultProps,
+      type: 'outline',
+      theme: {
+        ButtonPrimary: {
+          ...THEMES.dark.ButtonPrimary,
+        },
+      },
+    };
+    const wrapper = renderer.create(<ButtonPrimary {...props} />).toJSON();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('with button size', () => {
+    const props = {
+      ...defaultProps,
+      size: 'small',
       theme: {
         ButtonPrimary: {
           ...THEMES.dark.ButtonPrimary,

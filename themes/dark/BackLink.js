@@ -4,12 +4,13 @@ export default {
   style: {
     alignItems: 'flex-start',
   },
-  buttonStyle: {
+  buttonProps: {
+    type: 'clear',
     titleStyle: {
       color: COLORS.white,
     },
   },
-  iconStyle: {
+  iconProps: {
     iconName: 'angle-left',
     iconSize: 24,
     iconColor: COLORS.white,

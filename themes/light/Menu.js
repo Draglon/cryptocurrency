@@ -16,12 +16,18 @@ export const MenuItem = {
     alignContent: 'flex-start',
     paddingTop: 15,
   },
-};
-
-export const MenuItemIcon = {
-  iconStyle: {
-    marginRight: 15,
+  buttonProps: {
+    type: 'clear',
+    titleStyle: {
+      color: COLORS.gray,
+    },
   },
-  iconSize: 24,
-  iconColor: COLORS.gray,
+  iconProps: {
+    iconName: 'folder-open',
+    iconSize: 24,
+    iconColor: COLORS.gray,
+    iconStyle: {
+      marginRight: 15,
+    },
+  },
 };

@@ -7,17 +7,17 @@ import IconPrimary from '../IconPrimary';
 
 const ButtonClose = ({ theme, onPress }) => (
   <ButtonPrimary
-    customStyle={theme.ButtonClose.buttonStyle}
+    customStyle={theme.ButtonClose.buttonProps}
     onPress={onPress}
-    icon={(<IconPrimary {...theme.ButtonClose.iconStyle} />)}
+    icon={(<IconPrimary {...theme.ButtonClose.iconProps} />)}
   />
 );
 
 ButtonClose.propTypes = {
   theme: PropTypes.shape({
     ButtonClose: PropTypes.shape({
-      buttonStyle: PropTypes.shape({}).isRequired,
-      iconStyle: PropTypes.shape({}).isRequired,
+      buttonProps: PropTypes.shape({}).isRequired,
+      iconProps: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
   onPress: PropTypes.func.isRequired,

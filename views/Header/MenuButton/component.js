@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme, Button, Icon } from 'react-native-elements';
+import { withTheme } from 'react-native-elements';
+
+import ButtonPrimary from '../../shared/ButtonPrimary';
+import IconPrimary from '../../shared/IconPrimary';
 
 const MenuButtonComponent = ({ theme, onSidebarOpen }) => (
-  <Button
-    containerStyle={theme.MenuButton.style}
+  <ButtonPrimary
+    customStyle={theme.MenuButton.buttonProps}
     onPress={onSidebarOpen}
-    icon={(
-      <Icon
-        name={theme.MenuButton.iconName}
-        size={theme.MenuButton.iconSize}
-        color={theme.MenuButton.iconColor}
-      />
+    icon={(<IconPrimary {...theme.MenuButton.iconProps} />
     )}
   />
 );
@@ -19,10 +17,8 @@ const MenuButtonComponent = ({ theme, onSidebarOpen }) => (
 MenuButtonComponent.propTypes = {
   theme: PropTypes.shape({
     MenuButton: PropTypes.shape({
-      style: PropTypes.shape({}).isRequired,
-      iconName: PropTypes.string.isRequired,
-      iconSize: PropTypes.number.isRequired,
-      iconColor: PropTypes.string.isRequired,
+      buttonProps: PropTypes.shape({}).isRequired,
+      iconProps: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
   onSidebarOpen: PropTypes.func.isRequired,

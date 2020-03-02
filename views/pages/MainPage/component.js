@@ -4,7 +4,7 @@ import { withTheme, Text } from 'react-native-elements';
 
 import ButtonPrimary from '../../shared/ButtonPrimary';
 
-const MainPage = ({ theme, onAddToSet }) => (
+const MainPage = ({ onAddToSet }) => (
   <>
     <Text>Default set</Text>
     <ButtonPrimary
@@ -16,11 +16,6 @@ const MainPage = ({ theme, onAddToSet }) => (
 );
 
 MainPage.propTypes = {
-  theme: PropTypes.shape({
-    Page: PropTypes.shape({
-      style: PropTypes.shape({}).isRequired,
-    }).isRequired,
-  }).isRequired,
   onAddToSet: PropTypes.func.isRequired,
 };
 

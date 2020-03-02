@@ -1,7 +1,7 @@
 import { COLORS } from '../../constants/variables';
 
 export default {
-  buttonStyle: {
+  buttonProps: {
     type: 'clear',
     buttonStyle: {
       justifyContent: 'center',
@@ -10,7 +10,7 @@ export default {
       height: 40,
     },
   },
-  iconStyle: {
+  iconProps: {
     iconName: 'times',
     iconSize: 24,
     iconColor: COLORS.white,

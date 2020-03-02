@@ -5,7 +5,7 @@ import MenuButton from './MenuButton';
 import {
   Sidebar, SidebarHeader, SidebarBody, SidebarWrapper,
 } from './Sidebar';
-import { Menu, MenuItem, MenuItemIcon } from './Menu';
+import { Menu, MenuItem } from './Menu';
 import { Themes, ThemesItem } from './Themes';
 import { Languages, LanguagesItem } from './Languages';
 import { Page, PageBody, PageWrapper } from './Page';
@@ -66,7 +66,6 @@ export default {
   SidebarWrapper,
   Menu,
   MenuItem,
-  MenuItemIcon,
   Themes,
   ThemesItem,
   Languages,

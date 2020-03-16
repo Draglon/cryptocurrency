@@ -11,7 +11,7 @@ const MenuComponent = ({
   onSetsPage,
 }) => (
   <View style={theme.Menu.style}>
-    <Text h4>Menu</Text>
+    <Text h4 style={theme.MenuTitle.style}>Menu</Text>
     <View style={theme.MenuItem.style}>
       <ButtonPrimary
         customStyle={theme.MenuItem.buttonProps}
@@ -26,6 +26,9 @@ const MenuComponent = ({
 MenuComponent.propTypes = {
   theme: PropTypes.shape({
     Menu: PropTypes.shape({
+      style: PropTypes.shape({}).isRequired,
+    }).isRequired,
+    MenuTitle: PropTypes.shape({
       style: PropTypes.shape({}).isRequired,
     }).isRequired,
     MenuItem: PropTypes.shape({

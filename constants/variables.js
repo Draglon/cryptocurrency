@@ -2,6 +2,7 @@ export const COLORS = {
   // white
   white: '#fff',
   light: '#F3F4F6',
+  transparent: 'rgba(255, 255, 255, 0)',
 
   // black
   black: '#000',

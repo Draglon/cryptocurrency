@@ -9,25 +9,35 @@ export const Menu = {
   },
 };
 
+export const MenuTitle = {
+  style: {
+    marginBottom: 15,
+  },
+};
+
 export const MenuItem = {
   style: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     alignContent: 'flex-start',
-    paddingTop: 15,
+    paddingBottom: 10,
   },
   buttonProps: {
     type: 'clear',
     titleStyle: {
       color: COLORS.gray,
+      fontSize: 14,
+    },
+    buttonStyle: {
+      padding: 0,
     },
   },
   iconProps: {
     iconName: 'folder-open',
-    iconSize: 24,
+    iconSize: 18,
     iconColor: COLORS.gray,
     iconStyle: {
-      marginRight: 15,
+      marginRight: 10,
     },
   },
 };

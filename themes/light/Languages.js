@@ -14,6 +14,6 @@ export const LanguagesItem = {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     alignContent: 'flex-start',
-    paddingTop: 15,
+    paddingBottom: 10,
   },
 };

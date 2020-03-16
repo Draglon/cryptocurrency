@@ -13,8 +13,9 @@ import { MySets, MySetsEmpty } from './MySets';
 import { CreateSet } from './CreateSet';
 import Logo from './Logo';
 import BackLink from './BackLink';
-import ButtonPrimary from './ButtonPrimary';
 import ButtonClose from './ButtonClose';
+import ButtonPrimary from './ButtonPrimary';
+import ButtonCheckbox from './ButtonCheckbox';
 
 export default {
   // ================= React Native Elements =================
@@ -78,6 +79,7 @@ export default {
   // Shared
   Logo,
   BackLink,
-  ButtonPrimary,
   ButtonClose,
+  ButtonPrimary,
+  ButtonCheckbox,
 };

@@ -2,59 +2,53 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTheme, CheckBox } from 'react-native-elements';
 
-// import { BUTTON_TYPES, BUTTON_SIZES } from '../../../constants/theme';
-
 const ButtonCheckbox = ({
   theme,
-  type,
-  size,
   title,
   checked,
   onPress,
-}) => {
-  return (
-    <CheckBox
-      title={title}
-      size={size}
-      checked={checked}
+}) => (
+  <CheckBox
+    title={title}
+    type={theme.ButtonCheckbox.type}
+    size={theme.ButtonCheckbox.size}
+    containerStyle={theme.ButtonCheckbox.containerStyle}
+    textStyle={theme.ButtonCheckbox.textStyle}
+    checked={checked}
+    onPress={onPress}
       // Component={Component}
-      // onPress={onPress}
       // iconType={iconType}
       // iconRight={iconRight}
       // right={right}
       // center={center}
       // titleProps={titleProps}
-      // containerStyle={containerStyle}
-      // textStyle={textStyle}
       // onLongPress={onLongPress}
       // onLongIconPress={onLongIconPress}
       // onIconPress={onIconPress}
-      // checkedIcon={checkedIcon}
-      // uncheckedIcon={uncheckedIcon}
-      // checkedColor={checkedColor}
-      // uncheckedColor={uncheckedColor}
-      // checkedTitle={checkedTitle}
-      // fontFamily={fontFamily}
-    />
-  );
-};
+    checkedIcon={theme.ButtonCheckbox.checkedIcon}
+    uncheckedIcon={theme.ButtonCheckbox.uncheckedIcon}
+  />
+);
 
 ButtonCheckbox.defaultProps = {
-  type: '',
-  size: 18,
   title: '',
+  checked: false,
 };
 
 ButtonCheckbox.propTypes = {
   theme: PropTypes.shape({
-    ButtonPrimary: PropTypes.shape({
+    ButtonCheckbox: PropTypes.shape({
       type: PropTypes.string.isRequired,
+      size: PropTypes.number.isRequired,
+      containerStyle: PropTypes.shape({}).isRequired,
+      textStyle: PropTypes.shape({}).isRequired,
+      checkedIcon: PropTypes.string.isRequired,
+      uncheckedIcon: PropTypes.string.isRequired,
     }),
   }).isRequired,
-  type: PropTypes.string,
-  size: PropTypes.number,
   title: PropTypes.string,
-  checked: PropTypes.bool.isRequired,
+  checked: PropTypes.bool,
+  onPress: PropTypes.func.isRequired,
 };
 
 export default withTheme(ButtonCheckbox);

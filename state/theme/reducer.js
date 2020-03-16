@@ -1,6 +1,11 @@
 import * as types from './types';
 
-const initialState = 'light';
+import { THEME_CHECKBOXES } from '../../constants/theme';
+
+const initialState = {
+  theme: 'light',
+  checkboxes: THEME_CHECKBOXES,
+};
 
 function themeReducer(state = initialState, action) {
   switch (action.type) {

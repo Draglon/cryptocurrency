@@ -1,25 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import { Button, Text } from 'react-native-elements';
+import { Text } from 'react-native-elements';
 
-const ThemesComponent = ({ theme, onUpdateTheme }) => (
+import ButtonCheckbox from '../../../../shared/ButtonCheckbox';
+
+const ThemesComponent = ({ theme, checkboxes, onUpdateTheme }) => (
   <View style={theme.Themes.style}>
     <Text h4>Themes</Text>
-    <View style={theme.ThemesItem.style}>
-      <Button
-        type="clear"
-        title="Light"
-        onPress={onUpdateTheme('light')}
-      />
-    </View>
-    <View style={theme.ThemesItem.style}>
-      <Button
-        type="clear"
-        title="Dark"
-        onPress={onUpdateTheme('dark')}
-      />
-    </View>
+    {checkboxes.map((item) => (
+      <View style={theme.ThemesItem.style} key={item.id}>
+        <ButtonCheckbox
+          title={item.title}
+          checked={item.checked}
+          onPress={onUpdateTheme(item)}
+        />
+      </View>
+    ))}
   </View>
 );
 
@@ -32,6 +29,7 @@ ThemesComponent.propTypes = {
       style: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
+  checkboxes: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   onUpdateTheme: PropTypes.func.isRequired,
 };
 

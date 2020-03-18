@@ -16,6 +16,7 @@ import BackLink from './BackLink';
 import ButtonClose from './ButtonClose';
 import ButtonPrimary from './ButtonPrimary';
 import ButtonCheckbox from './ButtonCheckbox';
+import InputField from './InputField';
 
 export default {
   // ================= React Native Elements =================
@@ -83,4 +84,5 @@ export default {
   ButtonClose,
   ButtonPrimary,
   ButtonCheckbox,
+  InputField,
 };

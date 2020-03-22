@@ -18,9 +18,13 @@ export default {
   small: {
     containerStyle: {},
     buttonStyle: {
+      paddingLeft: 10,
+      paddingRight: 10,
       height: 30,
     },
-    titleStyle: {},
+    titleStyle: {
+      fontSize: 14,
+    },
     disabledStyle: {},
     disabledTitleStyle: {},
     loadingStyle: {},

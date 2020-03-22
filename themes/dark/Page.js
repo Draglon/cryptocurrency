@@ -19,8 +19,32 @@ export const PageWrapper = {
     backgroundColor: COLORS.dark,
     alignItems: 'stretch',
     paddingTop: 10,
+    paddingBottom: 20,
+  },
+};
+
+export const PageHeader = {
+  style: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    paddingTop: 10,
+    paddingBottom: 10,
     paddingLeft: 10,
     paddingRight: 10,
-    paddingBottom: 20,
+  },
+};
+
+export const PageTitle = {
+  style: {
+    alignItems: 'stretch',
+    marginBottom: 0,
+  },
+};
+
+export const PageContent = {
+  style: {
+    paddingTop: 10,
+    paddingBottom: 10,
   },
 };

@@ -2,13 +2,14 @@ import { COLORS } from '../../constants/variables';
 
 import Header from './Header';
 import MenuButton from './MenuButton';
+import { Page, PageBody, PageWrapper } from './Page';
+import MainPage from './MainPage';
 import {
   Sidebar, SidebarHeader, SidebarBody, SidebarWrapper,
 } from './Sidebar';
 import { Menu, MenuTitle, MenuItem } from './Menu';
 import { Themes, ThemesItem } from './Themes';
 import { Languages, LanguagesItem } from './Languages';
-import { Page, PageBody, PageWrapper } from './Page';
 import { MySets, MySetsEmpty } from './MySets';
 import { CreateSet } from './CreateSet';
 import Logo from './Logo';
@@ -17,6 +18,7 @@ import ButtonClose from './ButtonClose';
 import ButtonPrimary from './ButtonPrimary';
 import ButtonCheckbox from './ButtonCheckbox';
 import InputField from './InputField';
+import CurrencyField from './CurrencyField';
 
 export default {
   // ================= React Native Elements =================
@@ -61,6 +63,8 @@ export default {
   Page,
   PageBody,
   PageWrapper,
+  // MainPage
+  MainPage,
   // Sidebar
   Sidebar,
   SidebarHeader,
@@ -85,4 +89,5 @@ export default {
   ButtonPrimary,
   ButtonCheckbox,
   InputField,
+  CurrencyField,
 };

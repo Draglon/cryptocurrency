@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTheme, Input } from 'react-native-elements';
-import { mergeAll } from 'ramda';
+import { mergeDeepRight } from 'ramda';
 
 const InputField = ({
   theme,
@@ -13,7 +13,7 @@ const InputField = ({
   rightIcon,
   customStyle,
 }) => {
-  const input = mergeAll([theme.InputField, customStyle]);
+  const input = mergeDeepRight(theme.InputField, customStyle);
 
   return (
     <Input
@@ -62,7 +62,6 @@ InputField.propTypes = {
       rightIconContainerStyle: PropTypes.shape({}).isRequired,
     }),
   }).isRequired,
-  inputComponent: PropTypes.node,
   label: PropTypes.string,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,

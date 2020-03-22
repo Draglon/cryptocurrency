@@ -19,8 +19,6 @@ export const PageWrapper = {
     backgroundColor: COLORS.light,
     alignItems: 'stretch',
     paddingTop: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
     paddingBottom: 20,
   },
 };

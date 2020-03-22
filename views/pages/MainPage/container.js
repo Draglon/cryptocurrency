@@ -8,11 +8,16 @@ class MainPageContainer extends Component {
 
   }
 
+  handleShowCurrency = () => {
+
+  }
+
   render() {
     return (
       <MainPageComponent
         {...this.props}
         onAddToSet={this.handleAddToSet}
+        onShowCurrency={this.handleShowCurrency}
       />
     );
   }

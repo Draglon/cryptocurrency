@@ -5,22 +5,32 @@ import { withTheme, Text } from 'react-native-elements';
 
 import InputField from '../InputField';
 
-const CurrencyField = ({ theme }) => (
+const CurrencyField = ({
+  theme,
+  price,
+  currency,
+  selectedCurrency,
+}) => (
   <View style={theme.CurrencyField.containerStyle}>
     <InputField
       customStyle={theme.CurrencyField.customInputStyle}
       placeholder="0"
       rightIcon={(
         <Text style={theme.CurrencyField.textCurrencyStyle}>
-          USD
+          {currency}
         </Text>
       )}
     />
     <Text style={theme.CurrencyField.textHintStyle}>
-      1 USD ~ 25.05 UAH
+      {`1 ${selectedCurrency} ~ ${price} ${currency}`}
     </Text>
   </View>
 );
+
+CurrencyField.defaultProps = {
+  price: 0,
+  selectedCurrency: 'USD',
+};
 
 CurrencyField.propTypes = {
   theme: PropTypes.shape({
@@ -31,6 +41,9 @@ CurrencyField.propTypes = {
       textHintStyle: PropTypes.shape({}).isRequired,
     }),
   }).isRequired,
+  price: PropTypes.number,
+  currency: PropTypes.string.isRequired,
+  selectedCurrency: PropTypes.string,
 };
 
 export default withTheme(CurrencyField);

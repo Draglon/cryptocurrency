@@ -2,12 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { withTheme, Text, Divider } from 'react-native-elements';
+import { isEmpty, keys } from 'ramda';
 
 import ButtonPrimary from '../../shared/ButtonPrimary';
 import InputField from '../../shared/InputField';
 import CurrencyField from '../../shared/CurrencyField';
 
-const MainPage = ({ theme, onAddToSet, onShowCurrency }) => (
+const MainPage = ({
+  theme,
+  rates,
+  selectedCurrency,
+  onAddToSet,
+  onShowCurrency,
+}) => (
   <View style={theme.MainPage.style}>
     <View style={theme.MainPage.headerStyle}>
       <View style={theme.MainPage.headerItemStyle}>
@@ -25,7 +32,7 @@ const MainPage = ({ theme, onAddToSet, onShowCurrency }) => (
           placeholder="0"
           rightIcon={(
             <ButtonPrimary
-              title="USD"
+              title={selectedCurrency}
               onPress={onShowCurrency}
               customStyle={theme.MainPage.showCurrencyButton}
             />
@@ -36,10 +43,16 @@ const MainPage = ({ theme, onAddToSet, onShowCurrency }) => (
     </View>
     <Divider />
     <View style={theme.MainPage.bodyStyle}>
-      <CurrencyField />
-      <CurrencyField />
-      <CurrencyField />
-      <CurrencyField />
+      {!isEmpty(rates) ? (
+        keys(rates).map((currency) => (
+          <CurrencyField
+            key={currency}
+            currency={currency}
+            price={rates[currency]}
+            selectedCurrency={selectedCurrency}
+          />
+        ))
+      ) : null}
     </View>
   </View>
 );
@@ -56,6 +69,8 @@ MainPage.propTypes = {
       bodyStyle: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
+  rates: PropTypes.shape({}).isRequired,
+  selectedCurrency: PropTypes.string.isRequired,
   onAddToSet: PropTypes.func.isRequired,
   onShowCurrency: PropTypes.func.isRequired,
 };

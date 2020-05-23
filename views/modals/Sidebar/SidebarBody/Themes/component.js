@@ -8,7 +8,7 @@ import ButtonCheckbox from '../../../../shared/ButtonCheckbox';
 const ThemesComponent = ({ theme, checkboxes, onUpdateTheme }) => (
   <View style={theme.Themes.style}>
     <Text h4>Themes</Text>
-    {checkboxes.map((item) => (
+    {checkboxes && checkboxes.map((item) => (
       <View style={theme.ThemesItem.style} key={item.id}>
         <ButtonCheckbox
           title={item.title}

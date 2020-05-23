@@ -1,13 +1,12 @@
-import * as types from './types';
-
 import { THEME_CHECKBOXES } from '../../constants/theme';
+import * as types from './types';
 
 const initialState = {
   theme: 'light',
   checkboxes: THEME_CHECKBOXES,
 };
 
-function themeReducer(state = initialState, action) {
+const theme = (state = initialState, action) => {
   switch (action.type) {
     case types.UPDATE_THEME: {
       return action.typeTheme;
@@ -15,6 +14,6 @@ function themeReducer(state = initialState, action) {
     default:
       return state;
   }
-}
+};
 
-export default themeReducer;
+export default theme;

@@ -12,7 +12,7 @@ const LanguagesComponent = ({
 }) => (
   <View style={theme.Languages.style}>
     <Text h4>Languages</Text>
-    {checkboxes.map((item) => (
+    {checkboxes && checkboxes.map((item) => (
       <View style={theme.LanguagesItem.style} key={item.id}>
         <ButtonCheckbox
           title={item.title}

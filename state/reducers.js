@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 
-// import intlReducer from './intl';
-import themeReducer from './theme';
-import sidebarReducer from './sidebar';
+// import { default as intl } from './intl';
+import theme from './theme';
+import sidebar from './sidebar';
+import currency from './currency';
 
 export default combineReducers({
-  theme: themeReducer,
-  sidebar: sidebarReducer,
-  // intl: intlReducer,
+  theme,
+  sidebar,
+  currency,
+  // intl,
 });

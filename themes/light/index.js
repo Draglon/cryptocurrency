@@ -19,6 +19,7 @@ import ButtonPrimary from './ButtonPrimary';
 import ButtonCheckbox from './ButtonCheckbox';
 import InputField from './InputField';
 import CurrencyField from './CurrencyField';
+import Modal from './Modal';
 
 export default {
   // ================= React Native Elements =================
@@ -90,4 +91,6 @@ export default {
   ButtonCheckbox,
   InputField,
   CurrencyField,
+  // Modal
+  Modal,
 };

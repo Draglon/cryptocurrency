@@ -16,7 +16,7 @@ export default {
       borderColor: COLORS.grayLighter,
       borderStyle: INPUT.borderStyle,
       borderWidth: INPUT.borderWidth,
-      borderTopleftRadius: INPUT.borderRadius,
+      borderTopStartRadius: INPUT.borderRadius,
       borderBottomLeftRadius: INPUT.borderRadius,
       paddingLeft: INPUT.paddingLeft,
       paddingRight: INPUT.paddingRight,

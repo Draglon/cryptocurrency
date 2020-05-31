@@ -1,7 +1,9 @@
 import { COLORS } from '../../constants/variables';
 
 export default {
-  style: {},
+  style: {
+    position: 'relative',
+  },
   headerStyle: {},
   headerItemStyle: {
     flexDirection: 'row',

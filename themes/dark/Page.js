@@ -4,6 +4,7 @@ export const Page = {
   style: {
     flex: 1,
     alignItems: 'stretch',
+    position: 'relative',
   },
 };
 

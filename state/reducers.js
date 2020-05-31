@@ -4,10 +4,12 @@ import { combineReducers } from 'redux';
 import theme from './theme';
 import sidebar from './sidebar';
 import currency from './currency';
+import modal from './modal';
 
 export default combineReducers({
   theme,
   sidebar,
   currency,
+  modal,
   // intl,
 });

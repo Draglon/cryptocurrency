@@ -1,5 +1,5 @@
 export const BUTTON_TYPES = ['outline', 'clear'];
-export const BUTTON_SIZES = ['small', 'large'];
+export const BUTTON_SIZES = ['small', 'middle', 'large'];
 
 export const THEME_CHECKBOXES = [
   {

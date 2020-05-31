@@ -65,6 +65,20 @@ export default {
     backgroundColor: COLORS.white,
     borderBottomLeftRadius: MODAL.borderRadius,
     borderBottomRightRadius: MODAL.borderRadius,
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
     minHeight: 200,
+    maxHeight: height - 50,
+  },
+  bodyContentStyle: {
+    minHeight: 150,
+    maxHeight: height - 250,
+  },
+  bodyButtonsStyle: {
+    alignItems: 'flex-end',
+    paddingTop: 10,
+    minHeight: 50,
   },
 };

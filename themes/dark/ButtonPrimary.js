@@ -30,6 +30,22 @@ export default {
     loadingStyle: {},
     iconContainerStyle: {},
   },
+  // Middle Button
+  middle: {
+    containerStyle: {},
+    buttonStyle: {
+      paddingLeft: 15,
+      paddingRight: 15,
+      height: 40,
+    },
+    titleStyle: {
+      fontSize: 16,
+    },
+    disabledStyle: {},
+    disabledTitleStyle: {},
+    loadingStyle: {},
+    iconContainerStyle: {},
+  },
   // Large Button
   large: {
     containerStyle: {},

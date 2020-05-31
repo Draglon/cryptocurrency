@@ -3,25 +3,22 @@ import { combineReducers } from 'redux';
 import * as types from './types';
 
 const initialState = {
-  isVisible: false,
-  title: null,
-  type: null,
+  modalType: null,
+  modalProps: {},
 };
 
-const modalProps = (state = initialState, action) => {
+const modal = (state = initialState, action) => {
   switch (action.type) {
-    case types.SET_SHOW_MODAL: {
+    case types.SHOW_MODAL: {
       return {
-        isVisible: true,
-        title: action.modalProps.title,
-        type: action.modalProps.type,
+        modalType: action.modalType,
+        modalProps: action.modalProps,
       };
     }
-    case types.SET_HIDE_MODAL: {
+    case types.HIDE_MODAL: {
       return {
-        isVisible: false,
-        title: null,
-        type: null,
+        modalType: null,
+        modalProps: {},
       };
     }
     default:
@@ -30,5 +27,5 @@ const modalProps = (state = initialState, action) => {
 };
 
 export default combineReducers({
-  modalProps,
+  modal,
 });

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { hideModal as hideModalAction } from '../../../state/modal/actions';
-import { modalSelector } from '../../../state/modal/selectors';
+import { modalTypeSelector, modalPropsSelector } from '../../../state/modal/selectors';
 import ModalComponent from './component';
 
 class Modal extends Component {
@@ -27,7 +27,8 @@ class Modal extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  modal: modalSelector(state),
+  modalType: modalTypeSelector(state),
+  modalProps: modalPropsSelector(state),
 });
 
 const mapDispatchToProps = {

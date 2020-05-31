@@ -3,24 +3,25 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { withTheme, Text } from 'react-native-elements';
 
+import MODAL_COMPONENTS from './modalComponents';
 import ButtonPrimary from '../../shared/ButtonPrimary';
 import IconPrimary from '../../shared/IconPrimary';
 
 const Modal = ({
   theme,
   onClose,
-  modal: {
-    isVisible,
-    title,
-    type,
-  },
-}) => (
-  isVisible ? (
+  modalType,
+  modalProps,
+}) => {
+  if (!modalType) { return null; }
+
+  const ModalContent = MODAL_COMPONENTS[modalType];
+  return (
     <View style={theme.Modal.overlayStyle}>
       <View style={theme.Modal.containerStyle}>
         <View style={theme.Modal.headerStyle}>
           <Text style={theme.Modal.titleStyle}>
-            {title}
+            {modalProps.title}
           </Text>
           <ButtonPrimary
             customStyle={theme.Modal.buttonProps}
@@ -29,12 +30,17 @@ const Modal = ({
           />
         </View>
         <View style={theme.Modal.bodyStyle}>
-          <Text>{type}</Text>
+          <ModalContent modalProps={modalProps} />
         </View>
       </View>
     </View>
-  ) : null
-);
+  );
+};
+
+Modal.defaultProps = {
+  modalType: null,
+  modalProps: {},
+};
 
 Modal.propTypes = {
   theme: PropTypes.shape({
@@ -49,11 +55,10 @@ Modal.propTypes = {
     }).isRequired,
   }).isRequired,
   onClose: PropTypes.func.isRequired,
-  modal: PropTypes.shape({
-    isVisible: PropTypes.bool,
+  modalType: PropTypes.string,
+  modalProps: PropTypes.shape({
     title: PropTypes.string,
-    type: PropTypes.string,
-  }).isRequired,
+  }),
 };
 
 export default withTheme(Modal);

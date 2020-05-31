@@ -31,8 +31,11 @@ class MainPageContainer extends Component {
     const { showModal } = this.props;
 
     showModal({
-      title: 'Select currency',
-      type: 'ADD_CURRENCIES_TO_SET',
+      modalType: 'ADD_CURRENCIES_TO_SET',
+      modalProps: {
+        title: 'Select currency',
+        text: 'asdasddsa',
+      },
     });
   }
 
@@ -40,8 +43,10 @@ class MainPageContainer extends Component {
     const { showModal } = this.props;
 
     showModal({
-      title: 'Change current currency',
-      type: 'CHANGE_CURRENT_CURRENCY',
+      modalType: 'CHANGE_CURRENT_CURRENCY',
+      modalProps: {
+        title: 'Change current currency',
+      },
     });
   }
 

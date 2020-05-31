@@ -1,10 +1,11 @@
 import * as types from './types';
 
-export const showModal = (modalProps) => ({
-  type: types.SET_SHOW_MODAL,
+export const showModal = ({ modalType, modalProps }) => ({
+  type: types.SHOW_MODAL,
+  modalType,
   modalProps,
 });
 
 export const hideModal = () => ({
-  type: types.SET_HIDE_MODAL,
+  type: types.HIDE_MODAL,
 });

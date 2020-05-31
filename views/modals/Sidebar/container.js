@@ -13,7 +13,6 @@ class SidebarContainer extends Component {
 
   get isSidebarOpen() {
     const { sidebar } = this.props;
-
     return sidebar === SIDEBAR.open;
   }
 

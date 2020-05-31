@@ -12,6 +12,7 @@ const InputField = ({
   leftIcon,
   rightIcon,
   customStyle,
+  onChangeText,
 }) => {
   const input = mergeDeepRight(theme.InputField, customStyle);
 
@@ -33,6 +34,7 @@ const InputField = ({
       leftIconContainerStyle={input.leftIconContainerStyle}
       rightIcon={rightIcon}
       rightIconContainerStyle={input.rightIconContainerStyle}
+      onChangeText={onChangeText}
     />
   );
 };
@@ -45,6 +47,7 @@ InputField.defaultProps = {
   leftIcon: <></>,
   rightIcon: <></>,
   customStyle: {},
+  onChangeText: null,
 };
 
 InputField.propTypes = {
@@ -69,6 +72,7 @@ InputField.propTypes = {
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
   customStyle: PropTypes.shape({}),
+  onChangeText: PropTypes.func,
 };
 
 export default withTheme(InputField);

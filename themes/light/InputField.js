@@ -1,4 +1,4 @@
-import { COLORS } from '../../constants/variables';
+import { COLORS, INPUT } from '../../constants/variables';
 
 export default {
   containerStyle: {
@@ -11,14 +11,16 @@ export default {
   inputStyle: {
     backgroundColor: COLORS.white,
     borderColor: COLORS.grayLighter,
-    borderStyle: 'solid',
-    borderWidth: 1,
-    borderRadius: 4,
-    fontSize: 14,
-    paddingLeft: 10,
-    paddingRight: 10,
-    height: 30,
-    minHeight: 30,
+    borderStyle: INPUT.borderStyle,
+    borderWidth: INPUT.borderWidth,
+    borderRadius: INPUT.borderRadius,
+    fontSize: INPUT.fontSize,
+    paddingLeft: INPUT.paddingLeft,
+    paddingRight: INPUT.paddingRight,
+    marginLeft: 0,
+    marginRight: 0,
+    height: INPUT.height,
+    minHeight: INPUT.height,
   },
   labelStyle: {},
   labelProps: {},

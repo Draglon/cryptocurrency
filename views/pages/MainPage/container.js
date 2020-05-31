@@ -15,6 +15,11 @@ class MainPageContainer extends Component {
     fetchCurrency: PropTypes.func.isRequired,
   };
 
+  // eslint-disable-next-line react/state-in-constructor
+  state = {
+    currencyCount: '0',
+  };
+
   componentDidMount() {
     const { fetchCurrency } = this.props;
     fetchCurrency();
@@ -28,12 +33,18 @@ class MainPageContainer extends Component {
 
   }
 
+  handleChangeCurrencyCount = (value) => {
+    this.setState({ currencyCount: value });
+  }
+
   render() {
     return (
       <MainPageComponent
         {...this.props}
+        {...this.state}
         onAddToSet={this.handleAddToSet}
         onShowCurrency={this.handleShowCurrency}
+        onChangeCurrencyCount={this.handleChangeCurrencyCount}
       />
     );
   }

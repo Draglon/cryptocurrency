@@ -11,9 +11,11 @@ import CurrencyField from '../../shared/CurrencyField';
 const MainPage = ({
   theme,
   rates,
+  currencyCount,
   selectedCurrency,
   onAddToSet,
   onShowCurrency,
+  onChangeCurrencyCount,
 }) => (
   <View style={theme.MainPage.style}>
     <View style={theme.MainPage.headerStyle}>
@@ -38,6 +40,7 @@ const MainPage = ({
             />
           )}
           customStyle={theme.MainPage.showCurrencyInput}
+          onChangeText={onChangeCurrencyCount}
         />
       </View>
     </View>
@@ -49,6 +52,7 @@ const MainPage = ({
             key={currency}
             currency={currency}
             price={rates[currency]}
+            currencyCount={currencyCount * rates[currency]}
             selectedCurrency={selectedCurrency}
           />
         ))
@@ -70,9 +74,11 @@ MainPage.propTypes = {
     }).isRequired,
   }).isRequired,
   rates: PropTypes.shape({}).isRequired,
+  currencyCount: PropTypes.string.isRequired,
   selectedCurrency: PropTypes.string.isRequired,
   onAddToSet: PropTypes.func.isRequired,
   onShowCurrency: PropTypes.func.isRequired,
+  onChangeCurrencyCount: PropTypes.func.isRequired,
 };
 
 export default withTheme(MainPage);

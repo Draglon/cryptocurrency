@@ -1,33 +1,49 @@
-import { COLORS } from '../../constants/variables';
+import { COLORS, INPUT } from '../../constants/variables';
 
 export default {
   containerStyle: {
     paddingBottom: 10,
   },
   customInputStyle: {
+    inputContainerStyle: {
+      flex: 1,
+      flexDirection: 'row',
+    },
     inputStyle: {
-      borderTopRightRadius: 0,
-      borderBottomRightRadius: 0,
+      flex: 1,
+      justifyContent: 'center',
+      backgroundColor: COLORS.white,
       borderColor: COLORS.grayLighter,
-      borderStyle: 'solid',
-      borderWidth: 1,
+      borderStyle: INPUT.borderStyle,
+      borderWidth: INPUT.borderWidth,
+      borderTopStartRadius: INPUT.borderRadius,
+      borderBottomLeftRadius: INPUT.borderRadius,
+      paddingLeft: INPUT.paddingLeft,
+      paddingRight: INPUT.paddingRight,
+      height: INPUT.height,
+    },
+    inputTextStyle: {
+      fontSize: INPUT.fontSize,
+      marginBottom: 0,
     },
     rightIconContainerStyle: {
-      backgroundColor: COLORS.grayLighter,
-      borderTopRightRadius: 4,
-      borderBottomRightRadius: 4,
-      borderColor: COLORS.grayLighter,
-      borderStyle: 'solid',
-      borderWidth: 1,
-      borderLeftWidth: 0,
       alignItems: 'center',
-      height: 30,
+      justifyContent: 'center',
+      backgroundColor: COLORS.grayLighter,
+      borderColor: COLORS.grayLighter,
+      borderStyle: INPUT.borderStyle,
+      borderWidth: INPUT.borderWidth,
+      borderLeftWidth: 0,
+      borderTopRightRadius: INPUT.borderRadius,
+      borderBottomRightRadius: INPUT.borderRadius,
+      height: INPUT.height,
       width: 50,
     },
-  },
-  textCurrencyStyle: {
-    color: COLORS.dark,
-    marginBottom: 0,
+    rightIconStyle: {
+      color: COLORS.dark,
+      fontSize: INPUT.fontSize,
+      marginBottom: 0,
+    },
   },
   textHintStyle: {
     color: COLORS.dark,

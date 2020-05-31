@@ -22,3 +22,18 @@ export const COLORS = {
   // green
   green: '#66BB66',
 };
+
+export const BORDER = {
+  borderRadiusBase: 4,
+  borderWidthBase: 1,
+};
+
+export const INPUT = {
+  borderRadius: BORDER.borderRadiusBase,
+  borderWidth: BORDER.borderWidthBase,
+  borderStyle: 'solid',
+  fontSize: 14,
+  paddingLeft: 10,
+  paddingRight: 10,
+  height: 30,
+};

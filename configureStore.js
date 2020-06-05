@@ -17,7 +17,7 @@ const migrations = {
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  version: 1,
+  version: 3,
   migrate: createMigrate(migrations, { debug: false }),
 };
 

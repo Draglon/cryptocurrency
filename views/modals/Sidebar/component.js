@@ -11,7 +11,12 @@ const SidebarComponent = ({
   navigation,
   isSidebarOpen,
 }) => (
-  <View style={{ ...theme.Sidebar.style, left: isSidebarOpen ? 0 : '-100%' }}>
+  <View
+    style={{
+      ...theme.Sidebar.style,
+      left: isSidebarOpen ? 0 : '-100%',
+    }}
+  >
     <SidebarHeader />
     <SidebarBody navigation={navigation} />
   </View>

@@ -8,7 +8,7 @@ import Modal from '../modals/Modal';
 import Sidebar from '../modals/Sidebar';
 
 export default (Component) => {
-  class withLayout extends React.PureComponent {
+  class Layout extends React.PureComponent {
     static propTypes = {
       navigation: PropTypes.shape({}).isRequired,
       theme: PropTypes.shape({
@@ -43,5 +43,5 @@ export default (Component) => {
     };
   }
 
-  return withTheme(withLayout);
+  return withTheme(Layout);
 };

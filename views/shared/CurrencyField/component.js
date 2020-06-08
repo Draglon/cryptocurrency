@@ -6,24 +6,27 @@ import { ceil } from 'lodash';
 
 const CurrencyField = ({
   theme,
-  price,
+  count,
   currency,
-  currencyCount,
   selectedCurrency,
+  price,
+  priceSelectedCurrency,
 }) => (
   <View style={theme.CurrencyField.containerStyle}>
     <View style={theme.CurrencyField.customInputStyle.inputContainerStyle}>
       <View style={theme.CurrencyField.customInputStyle.inputStyle}>
         <Text style={theme.CurrencyField.customInputStyle.inputTextStyle}>
-          {ceil(currencyCount, 2)}
+          {ceil(count * (price / priceSelectedCurrency), 2)}
         </Text>
       </View>
       <View style={theme.CurrencyField.customInputStyle.rightIconContainerStyle}>
-        <Text style={theme.CurrencyField.customInputStyle.rightIconStyle}>{currency}</Text>
+        <Text style={theme.CurrencyField.customInputStyle.rightIconStyle}>
+          {currency}
+        </Text>
       </View>
     </View>
     <Text style={theme.CurrencyField.textHintStyle}>
-      {`1 ${selectedCurrency} ~ ${price} ${currency}`}
+      {`1 ${selectedCurrency} ~ ${ceil(price / priceSelectedCurrency, 2)} ${currency}`}
     </Text>
   </View>
 );
@@ -46,10 +49,11 @@ CurrencyField.propTypes = {
       textHintStyle: PropTypes.shape({}).isRequired,
     }),
   }).isRequired,
-  price: PropTypes.number,
+  count: PropTypes.number.isRequired,
   currency: PropTypes.string.isRequired,
-  currencyCount: PropTypes.number.isRequired,
   selectedCurrency: PropTypes.string.isRequired,
+  price: PropTypes.number,
+  priceSelectedCurrency: PropTypes.number.isRequired,
 };
 
 export default withTheme(CurrencyField);

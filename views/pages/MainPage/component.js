@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { withTheme, Text, Divider } from 'react-native-elements';
-import { isEmpty, keys } from 'ramda';
+import { isEmpty } from 'ramda';
 
 import ButtonPrimary from '../../shared/ButtonPrimary';
 import InputField from '../../shared/InputField';
@@ -10,6 +10,7 @@ import CurrencyField from '../../shared/CurrencyField';
 
 const MainPage = ({
   theme,
+  rates,
   currencyCount,
   selectedCurrency,
   selectedCurrencySet,
@@ -46,17 +47,18 @@ const MainPage = ({
     </View>
     <Divider />
     <View style={theme.MainPage.bodyStyle}>
-      {!isEmpty(selectedCurrencySet) ? (<></>
-        // keys(rates).map((currency) => (
-        //   <CurrencyField
-        //     key={currency}
-        //     currency={currency}
-        //     price={rates[currency]}
-        //     currencyCount={currencyCount * rates[currency]}
-        //     selectedCurrency={selectedCurrency}
-        //   />
-        // ))
-      ) : null}
+      {!isEmpty(selectedCurrencySet) && (
+        selectedCurrencySet.map((currency) => (
+          <CurrencyField
+            key={currency}
+            currency={currency}
+            selectedCurrency={selectedCurrency}
+            price={rates[currency]}
+            priceSelectedCurrency={rates[selectedCurrency]}
+            count={currencyCount}
+          />
+        ))
+      )}
     </View>
   </View>
 );
@@ -73,6 +75,7 @@ MainPage.propTypes = {
       bodyStyle: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
+  rates: PropTypes.shape({}).isRequired,
   currencyCount: PropTypes.string.isRequired,
   selectedCurrency: PropTypes.string.isRequired,
   selectedCurrencySet: PropTypes.arrayOf(PropTypes.string).isRequired,

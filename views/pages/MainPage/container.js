@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { compose } from 'ramda';
 
 import { fetchCurrency as fetchCurrencyAction } from '../../../state/currency/actions';
 import {
+  currencyRatesSelector,
   selectedCurrencySelector,
   selectedCurrencySetSelector,
 } from '../../../state/currency/selectors';
@@ -54,6 +56,7 @@ class MainPageContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  rates: currencyRatesSelector(state),
   selectedCurrency: selectedCurrencySelector(state),
   selectedCurrencySet: selectedCurrencySetSelector(state),
 });
@@ -62,4 +65,7 @@ const mapDispatchToProps = {
   fetchCurrency: fetchCurrencyAction,
 };
 
-export default Layout(connect(mapStateToProps, mapDispatchToProps)(MainPageContainer));
+export default compose(
+  Layout,
+  connect(mapStateToProps, mapDispatchToProps),
+)(MainPageContainer);

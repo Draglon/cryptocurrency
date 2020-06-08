@@ -31,10 +31,6 @@ const CurrencyField = ({
   </View>
 );
 
-CurrencyField.defaultProps = {
-  price: 0,
-};
-
 CurrencyField.propTypes = {
   theme: PropTypes.shape({
     CurrencyField: PropTypes.shape({
@@ -52,7 +48,7 @@ CurrencyField.propTypes = {
   count: PropTypes.number.isRequired,
   currency: PropTypes.string.isRequired,
   selectedCurrency: PropTypes.string.isRequired,
-  price: PropTypes.number,
+  price: PropTypes.number.isRequired,
   priceSelectedCurrency: PropTypes.number.isRequired,
 };
 

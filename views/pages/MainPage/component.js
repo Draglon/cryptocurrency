@@ -75,7 +75,7 @@ MainPage.propTypes = {
   }).isRequired,
   currencyCount: PropTypes.string.isRequired,
   selectedCurrency: PropTypes.string.isRequired,
-  selectedCurrencySet: PropTypes.arrayOf({}).isRequired,
+  selectedCurrencySet: PropTypes.arrayOf(PropTypes.string).isRequired,
   onAddToSet: PropTypes.func.isRequired,
   onShowCurrency: PropTypes.func.isRequired,
   onChangeCurrencyCount: PropTypes.func.isRequired,

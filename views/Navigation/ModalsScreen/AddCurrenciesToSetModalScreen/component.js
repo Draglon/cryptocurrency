@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SafeAreaView, ScrollView, View } from 'react-native';
 import { withTheme } from 'react-native-elements';
-import { isEmpty, keys } from 'ramda';
+import { isEmpty, keys, includes } from 'ramda';
 
 import ButtonPrimary from '../../../shared/ButtonPrimary';
 import ButtonCheckbox from '../../../shared/ButtonCheckbox';
 
-const AddCurrenciesToSetModal = ({
+const AddCurrenciesToSetModalComponent = ({
   theme,
-  onSave,
   rates,
+  currencySet,
+  onSave,
+  onSetCurrencySet,
 }) => (
   <>
     <SafeAreaView style={theme.Modal.bodyContentStyle}>
@@ -20,8 +22,8 @@ const AddCurrenciesToSetModal = ({
             <View key={currency}>
               <ButtonCheckbox
                 title={currency}
-                // checked={}
-                onPress={() => {}}
+                checked={includes(currency, currencySet)}
+                onPress={onSetCurrencySet(currency)}
               />
             </View>
           ))
@@ -38,11 +40,11 @@ const AddCurrenciesToSetModal = ({
   </>
 );
 
-AddCurrenciesToSetModal.defaultProps = {
+AddCurrenciesToSetModalComponent.defaultProps = {
   rates: null,
 };
 
-AddCurrenciesToSetModal.propTypes = {
+AddCurrenciesToSetModalComponent.propTypes = {
   theme: PropTypes.shape({
     Modal: PropTypes.shape({
       bodyContentStyle: PropTypes.shape().isRequired,
@@ -50,7 +52,9 @@ AddCurrenciesToSetModal.propTypes = {
     }).isRequired,
   }).isRequired,
   rates: PropTypes.shape(),
+  currencySet: PropTypes.arrayOf(PropTypes.string).isRequired,
   onSave: PropTypes.func.isRequired,
+  onSetCurrencySet: PropTypes.func.isRequired,
 };
 
-export default withTheme(AddCurrenciesToSetModal);
+export default withTheme(AddCurrenciesToSetModalComponent);

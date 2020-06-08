@@ -13,3 +13,8 @@ export const setSelectedCurrency = (selectedCurrency) => ({
   type: types.SET_SELECTED_CURRENCY,
   selectedCurrency,
 });
+
+export const setSelectedCurrencySet = (currencySet) => ({
+  type: types.SET_SELECTED_CURRENCY_SET,
+  currencySet,
+});

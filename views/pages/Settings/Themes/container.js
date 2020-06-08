@@ -30,9 +30,6 @@ class ThemesContainer extends Component {
     return (
       <ThemesComponent
         {...this.props}
-        isSidebarOpen={this.isSidebarOpen}
-        onSidebarClose={this.handleSidebarClose}
-        onSetsPage={this.handleSetsPage}
         onUpdateTheme={this.handleUpdateTheme}
       />
     );

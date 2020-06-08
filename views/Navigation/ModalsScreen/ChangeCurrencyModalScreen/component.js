@@ -9,8 +9,10 @@ import ButtonCheckbox from '../../../shared/ButtonCheckbox';
 
 const SelectCurrentCurrencyModalComponent = ({
   theme,
-  onSave,
   rates,
+  currentCurrency,
+  onSave,
+  onSetCurrency,
 }) => (
   <>
     <SafeAreaView style={theme.Modal.bodyContentStyle}>
@@ -20,8 +22,8 @@ const SelectCurrentCurrencyModalComponent = ({
             <View key={currency}>
               <ButtonCheckbox
                 title={currency}
-                // checked={}
-                onPress={() => {}}
+                checked={currentCurrency === currency}
+                onPress={onSetCurrency(currency)}
               />
             </View>
           ))
@@ -50,7 +52,9 @@ SelectCurrentCurrencyModalComponent.propTypes = {
     }).isRequired,
   }).isRequired,
   rates: PropTypes.shape(),
+  currentCurrency: PropTypes.string.isRequired,
   onSave: PropTypes.func.isRequired,
+  onSetCurrency: PropTypes.func.isRequired,
 };
 
 export default withTheme(SelectCurrentCurrencyModalComponent);

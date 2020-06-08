@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 import { fetchCurrency as fetchCurrencyAction } from '../../../state/currency/actions';
 import {
-  currencyRatesSelector,
   selectedCurrencySelector,
+  selectedCurrencySetSelector,
 } from '../../../state/currency/selectors';
 import Layout from '../Layout';
 import MainPageComponent from './component';
@@ -54,8 +54,8 @@ class MainPageContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  rates: currencyRatesSelector(state),
   selectedCurrency: selectedCurrencySelector(state),
+  selectedCurrencySet: selectedCurrencySetSelector(state),
 });
 
 const mapDispatchToProps = {

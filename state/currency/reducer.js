@@ -12,6 +12,16 @@ const rates = (state = {}, action) => {
   }
 };
 
+const selectedCurrencySet = (state = [], action) => {
+  switch (action.type) {
+    case types.SET_SELECTED_CURRENCY_SET: {
+      return action.currencySet;
+    }
+    default:
+      return state;
+  }
+};
+
 const selectedCurrency = (state = 'USD', action) => {
   switch (action.type) {
     case types.SET_SELECTED_CURRENCY: {
@@ -25,4 +35,5 @@ const selectedCurrency = (state = 'USD', action) => {
 export default combineReducers({
   rates,
   selectedCurrency,
+  selectedCurrencySet,
 });

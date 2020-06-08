@@ -10,9 +10,9 @@ import CurrencyField from '../../shared/CurrencyField';
 
 const MainPage = ({
   theme,
-  rates,
   currencyCount,
   selectedCurrency,
+  selectedCurrencySet,
   onAddToSet,
   onShowCurrency,
   onChangeCurrencyCount,
@@ -46,16 +46,16 @@ const MainPage = ({
     </View>
     <Divider />
     <View style={theme.MainPage.bodyStyle}>
-      {!isEmpty(rates) ? (
-        keys(rates).map((currency) => (
-          <CurrencyField
-            key={currency}
-            currency={currency}
-            price={rates[currency]}
-            currencyCount={currencyCount * rates[currency]}
-            selectedCurrency={selectedCurrency}
-          />
-        ))
+      {!isEmpty(selectedCurrencySet) ? (<></>
+        // keys(rates).map((currency) => (
+        //   <CurrencyField
+        //     key={currency}
+        //     currency={currency}
+        //     price={rates[currency]}
+        //     currencyCount={currencyCount * rates[currency]}
+        //     selectedCurrency={selectedCurrency}
+        //   />
+        // ))
       ) : null}
     </View>
   </View>
@@ -73,9 +73,9 @@ MainPage.propTypes = {
       bodyStyle: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
-  rates: PropTypes.shape({}).isRequired,
   currencyCount: PropTypes.string.isRequired,
   selectedCurrency: PropTypes.string.isRequired,
+  selectedCurrencySet: PropTypes.arrayOf({}).isRequired,
   onAddToSet: PropTypes.func.isRequired,
   onShowCurrency: PropTypes.func.isRequired,
   onChangeCurrencyCount: PropTypes.func.isRequired,

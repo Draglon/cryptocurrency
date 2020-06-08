@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { LANGUAGES_CHECKBOXES } from '../../../../../constants/theme';
+import { LANGUAGES_CHECKBOXES } from '../../../../constants/theme';
 import LanguagesComponent from './component';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class LanguagesContainer extends Component {
   handleUpdateLanguages = (lang) => () => {
-    console.log('lang', lang);
+    // console.log('lang', lang);
   }
 
   // eslint-disable-next-line react/state-in-constructor

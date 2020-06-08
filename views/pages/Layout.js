@@ -4,8 +4,6 @@ import { SafeAreaView, ScrollView, View } from 'react-native';
 import { withTheme } from 'react-native-elements';
 
 import Header from '../Header';
-import Modal from '../modals/Modal';
-import Sidebar from '../modals/Sidebar';
 
 export default (Component) => {
   class Layout extends React.PureComponent {
@@ -28,9 +26,7 @@ export default (Component) => {
       const { navigation, theme } = this.props;
       return (
         <View style={theme.Page.style}>
-          <Modal />
-          <Header />
-          <Sidebar navigation={navigation} />
+          <Header navigation={navigation} />
           <SafeAreaView style={theme.PageBody.style}>
             <ScrollView>
               <View style={theme.PageWrapper.style}>

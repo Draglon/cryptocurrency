@@ -6,16 +6,24 @@ import { withTheme } from 'react-native-elements';
 import ButtonPrimary from '../ButtonPrimary';
 import IconPrimary from '../IconPrimary';
 
-const BackLink = ({ theme, onPress }) => (
+const BackLink = ({
+  theme,
+  title,
+  onPress,
+}) => (
   <View style={theme.BackLink.style}>
     <ButtonPrimary
       customStyle={theme.BackLink.buttonProps}
-      title="Back"
+      title={title}
       onPress={onPress}
       icon={(<IconPrimary {...theme.BackLink.iconProps} />)}
     />
   </View>
 );
+
+BackLink.defaultProps = {
+  title: 'Back',
+};
 
 BackLink.propTypes = {
   theme: PropTypes.shape({
@@ -25,6 +33,7 @@ BackLink.propTypes = {
       iconProps: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
+  title: PropTypes.string,
   onPress: PropTypes.func.isRequired,
 };
 

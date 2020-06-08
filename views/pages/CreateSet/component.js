@@ -5,20 +5,25 @@ import { withTheme, Text } from 'react-native-elements';
 
 import BackLink from '../../shared/BackLink';
 
-const CreateSetComponent = ({ theme, onBackLink }) => (
+const CreateSetComponent = ({
+  navigation,
+  theme,
+}) => (
   <View style={theme.CreateSet.style}>
-    <BackLink onPress={onBackLink} />
+    <BackLink onPress={navigation.goBack} />
     <Text>Create set</Text>
   </View>
 );
 
 CreateSetComponent.propTypes = {
+  navigation: PropTypes.shape({
+    goBack: PropTypes.func.isRequired,
+  }).isRequired,
   theme: PropTypes.shape({
     CreateSet: PropTypes.shape({
       style: PropTypes.shape({}).isRequired,
     }).isRequired,
   }).isRequired,
-  onBackLink: PropTypes.func.isRequired,
 };
 
 export default withTheme(CreateSetComponent);

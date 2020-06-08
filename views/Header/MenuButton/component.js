@@ -9,8 +9,7 @@ const MenuButtonComponent = ({ theme, onSidebarOpen }) => (
   <ButtonPrimary
     customStyle={theme.MenuButton.buttonProps}
     onPress={onSidebarOpen}
-    icon={(<IconPrimary {...theme.MenuButton.iconProps} />
-    )}
+    icon={(<IconPrimary {...theme.MenuButton.iconProps} />)}
   />
 );
 

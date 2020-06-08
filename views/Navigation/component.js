@@ -10,13 +10,17 @@ import { PAGES } from '../../constants/pages';
 import MainPage from '../pages/MainPage';
 import MySets from '../pages/MySets';
 import CreateSet from '../pages/CreateSet';
+import Settings from '../pages/Settings';
+
+import AddCurrenciesToSet from './ModalsScreen/AddCurrenciesToSetModalScreen';
+import ChangeCurrency from './ModalsScreen/ChangeCurrencyModalScreen';
 
 const Drawer = createDrawerNavigator();
 
 const NavigationComponent = ({ theme }) => (
   <ThemeProvider theme={THEMES[theme]}>
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName={PAGES.default}>
+      <Drawer.Navigator initialRouteName={PAGES.default} mode="modal">
         <Drawer.Screen
           name={PAGES.default}
           component={MainPage}
@@ -32,6 +36,13 @@ const NavigationComponent = ({ theme }) => (
           component={CreateSet}
           options={{ headerShown: false }}
         />
+        <Drawer.Screen
+          name={PAGES.settings}
+          component={Settings}
+          options={{ headerShown: false }}
+        />
+        <Drawer.Screen name="AddCurrencies" component={AddCurrenciesToSet} />
+        <Drawer.Screen name="ChangeCurrency" component={ChangeCurrency} />
       </Drawer.Navigator>
     </NavigationContainer>
   </ThemeProvider>

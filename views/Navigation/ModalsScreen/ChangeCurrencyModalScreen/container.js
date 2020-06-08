@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { hideModal as hideModalAction } from '../../../../state/modal/actions';
 import { currencyRatesSelector } from '../../../../state/currency/selectors';
 import SelectCurrentCurrencyModalComponent from './component';
 
 class SelectCurrentCurrencyModal extends Component {
   static propTypes = {
-    hideModal: PropTypes.func.isRequired,
+
   };
 
   handleSave = () => {
-    const { hideModal } = this.props;
-
-    hideModal();
+    // const { hideModal } = this.props;
   };
 
   render() {
@@ -32,7 +29,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  hideModal: hideModalAction,
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectCurrentCurrencyModal);

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { Text } from 'react-native-elements';
 
-import ButtonCheckbox from '../../../../shared/ButtonCheckbox';
+import ButtonCheckbox from '../../../shared/ButtonCheckbox';
 
 const ThemesComponent = ({ theme, checkboxes, onUpdateTheme }) => (
   <View style={theme.Themes.style}>

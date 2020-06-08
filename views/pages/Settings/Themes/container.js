@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { withTheme } from 'react-native-elements';
 import { map, merge } from 'ramda';
 
-import { THEMES } from '../../../../../themes';
-import { setTypeTheme as setTypeThemeAction } from '../../../../../state/theme/actions';
-import { themeCheckboxesSelector } from '../../../../../state/theme/selectors';
+import { THEMES } from '../../../../themes';
+import { setTypeTheme as setTypeThemeAction } from '../../../../state/theme/actions';
+import { themeCheckboxesSelector } from '../../../../state/theme/selectors';
 import ThemesComponent from './component';
 
 class ThemesContainer extends Component {

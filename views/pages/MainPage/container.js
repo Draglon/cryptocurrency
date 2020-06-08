@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { fetchCurrency as fetchCurrencyAction } from '../../../state/currency/actions';
-import { showModal as showModalAction } from '../../../state/modal/actions';
 import {
   currencyRatesSelector,
   selectedCurrencySelector,
@@ -14,7 +13,7 @@ import MainPageComponent from './component';
 class MainPageContainer extends Component {
   static propTypes = {
     fetchCurrency: PropTypes.func.isRequired,
-    showModal: PropTypes.func.isRequired,
+    navigation: PropTypes.shape().isRequired,
   };
 
   // eslint-disable-next-line react/state-in-constructor
@@ -28,26 +27,13 @@ class MainPageContainer extends Component {
   }
 
   handleAddToSet = () => {
-    const { showModal } = this.props;
-
-    showModal({
-      modalType: 'ADD_CURRENCIES_TO_SET',
-      modalProps: {
-        title: 'Select currency',
-        text: 'asdasddsa',
-      },
-    });
+    const { navigation } = this.props;
+    navigation.navigate('AddCurrencies');
   }
 
   handleShowCurrency = () => {
-    const { showModal } = this.props;
-
-    showModal({
-      modalType: 'CHANGE_CURRENT_CURRENCY',
-      modalProps: {
-        title: 'Change current currency',
-      },
-    });
+    const { navigation } = this.props;
+    navigation.navigate('ChangeCurrency');
   }
 
   handleChangeCurrencyCount = (value) => {
@@ -74,7 +60,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   fetchCurrency: fetchCurrencyAction,
-  showModal: showModalAction,
 };
 
 export default Layout(connect(mapStateToProps, mapDispatchToProps)(MainPageContainer));

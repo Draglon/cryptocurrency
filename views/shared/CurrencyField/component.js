@@ -45,7 +45,7 @@ CurrencyField.propTypes = {
       textHintStyle: PropTypes.shape({}).isRequired,
     }),
   }).isRequired,
-  count: PropTypes.number.isRequired,
+  count: PropTypes.string.isRequired,
   currency: PropTypes.string.isRequired,
   selectedCurrency: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,

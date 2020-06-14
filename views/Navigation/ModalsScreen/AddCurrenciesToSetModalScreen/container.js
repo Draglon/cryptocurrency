@@ -18,19 +18,24 @@ class AddCurrenciesToSetModal extends Component {
     currencySet: [],
   };
 
+  handleClose = () => {
+    const { navigation } = this.props;
+    navigation.goBack();
+  };
+
   handleSetCurrencySet = (currency) => () => {
     const { currencySet } = this.state;
 
     this.setState({
       currencySet: newCurrencySet(currency, currencySet),
     });
-  }
+  };
 
   handleSave = () => {
     const { currencySet } = this.state;
-    const { navigation, setSelectedCurrencySet } = this.props;
+    const { setSelectedCurrencySet } = this.props;
 
-    navigation.goBack();
+    this.handleClose();
     setSelectedCurrencySet(currencySet);
   };
 
@@ -39,6 +44,7 @@ class AddCurrenciesToSetModal extends Component {
       <AddCurrenciesToSetModalComponent
         {...this.state}
         {...this.props}
+        onClose={this.handleClose}
         onSave={this.handleSave}
         onSetCurrencySet={this.handleSetCurrencySet}
       />

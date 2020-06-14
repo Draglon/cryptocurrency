@@ -7,7 +7,7 @@ import { fetchCurrency as fetchCurrencyAction } from '../../../state/currency/ac
 import {
   currencyRatesSelector,
   selectedCurrencySelector,
-  selectedCurrencySetSelector,
+  selectedSetSelector,
 } from '../../../state/currency/selectors';
 import Layout from '../Layout';
 import MainPageComponent from './component';
@@ -58,7 +58,7 @@ class MainPageContainer extends Component {
 const mapStateToProps = (state) => ({
   rates: currencyRatesSelector(state),
   selectedCurrency: selectedCurrencySelector(state),
-  selectedCurrencySet: selectedCurrencySetSelector(state),
+  selectedCurrencySet: selectedSetSelector(state),
 });
 
 const mapDispatchToProps = {

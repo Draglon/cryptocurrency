@@ -2,83 +2,45 @@ import { Dimensions } from 'react-native';
 
 import { COLORS, MODAL } from '../../constants/variables';
 
-const { height, width } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 export default {
-  overlayStyle: {
-    flex: 1,
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: COLORS.overlayBlack,
+  containerStyle: {
+    backgroundColor: COLORS.white,
+  },
+  headerStyle: {
+    backgroundColor: COLORS.gray,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    paddingTop: 30,
+    paddingBottom: MODAL.paddingBottom,
+    paddingLeft: MODAL.paddingLeft,
+    paddingRight: MODAL.paddingRight,
+    height: 80,
+  },
+  buttonCloseProps: {},
+  iconProps: {},
+  bodyStyle: {
     paddingTop: MODAL.paddingTop,
     paddingBottom: MODAL.paddingBottom,
     paddingLeft: MODAL.paddingLeft,
     paddingRight: MODAL.paddingRight,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width,
-    height,
-    zIndex: 9999,
+    height: height - 140,
   },
-  containerStyle: {
-    width: '100%',
-  },
-  headerStyle: {
-    backgroundColor: COLORS.grayLight,
-    borderTopStartRadius: MODAL.borderRadius,
-    borderTopRightRadius: MODAL.borderRadius,
-    position: 'relative',
-  },
-  titleStyle: {
-    color: COLORS.white,
-    fontSize: 18,
-    fontWeight: 'bold',
-    paddingTop: 5,
-    paddingBottom: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-    marginBottom: 0,
-    minHeight: 40,
-  },
-  buttonProps: {
-    type: 'clear',
-    containerStyle: {
-      position: 'absolute',
-      top: 0,
-      right: 0,
-    },
-    buttonStyle: {
-      justifyContent: 'center',
-      alignContent: 'center',
-      width: 40,
-      height: 40,
-    },
-  },
-  iconProps: {
-    iconName: 'times',
-    iconSize: 24,
-    iconColor: COLORS.white,
-  },
-  bodyStyle: {
-    backgroundColor: COLORS.white,
-    borderBottomLeftRadius: MODAL.borderRadius,
-    borderBottomRightRadius: MODAL.borderRadius,
-    paddingTop: 15,
-    paddingBottom: 15,
-    paddingLeft: 10,
-    paddingRight: 10,
-    minHeight: 200,
-    maxHeight: height - 50,
-  },
-  bodyContentStyle: {
-    minHeight: 150,
-    maxHeight: height - 250,
-  },
-  bodyButtonsStyle: {
+  footerStyle: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
     alignItems: 'flex-end',
-    paddingTop: 10,
-    minHeight: 50,
+    paddingTop: MODAL.paddingTop,
+    paddingBottom: MODAL.paddingBottom,
+    paddingLeft: MODAL.paddingLeft,
+    paddingRight: MODAL.paddingRight,
+    height: 60,
+  },
+  customSubmitButtonStyle: {
+    buttonStyle: {
+      minWidth: 100,
+    },
   },
 };

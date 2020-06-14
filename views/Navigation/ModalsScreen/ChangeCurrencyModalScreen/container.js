@@ -18,6 +18,11 @@ class SelectCurrentCurrencyModal extends Component {
     currency: null,
   };
 
+  handleClose = () => {
+    const { navigation } = this.props;
+    navigation.goBack();
+  };
+
   get currentCurrency() {
     const { currency } = this.state;
     const { selectedCurrency } = this.props;
@@ -31,9 +36,9 @@ class SelectCurrentCurrencyModal extends Component {
 
   handleSave = () => {
     const { currency } = this.state;
-    const { navigation, setSelectedCurrency } = this.props;
+    const { setSelectedCurrency } = this.props;
 
-    navigation.goBack();
+    this.handleClose();
     setSelectedCurrency(currency);
   };
 
@@ -43,6 +48,7 @@ class SelectCurrentCurrencyModal extends Component {
         {...this.state}
         {...this.props}
         currentCurrency={this.currentCurrency}
+        onClose={this.handleClose}
         onSave={this.handleSave}
         onSetCurrency={this.handleSetCurrency}
       />

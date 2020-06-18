@@ -6,7 +6,7 @@ import LanguagesComponent from './component';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class LanguagesContainer extends Component {
-  handleUpdateLanguages = (lang) => () => {
+  handleUpdateLanguages = () => () => {
     // console.log('lang', lang);
   }
 

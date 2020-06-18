@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SafeAreaView, ScrollView, View } from 'react-native';
 import { withTheme, Text, Divider } from 'react-native-elements';
+import * as Animatable from 'react-native-animatable';
 import { isEmpty } from 'ramda';
 
 import ButtonPrimary from '../../shared/ButtonPrimary';
@@ -66,12 +67,20 @@ const MainPage = ({
       </ScrollView>
     </SafeAreaView>
     <View>
-      <ButtonPrimary
+      {/* <ButtonPrimary
         title=""
         onPress={onAddToSet}
         customStyle={theme.MainPage.addToSetBtn.buttonProps}
         icon={(<IconPrimary {...theme.MainPage.addToSetBtn.iconProps} />)}
-      />
+      /> */}
+      <Animatable.View>
+        <ButtonPrimary
+          title=""
+          onPress={onAddToSet}
+          customStyle={theme.MainPage.addToSetBtn.buttonProps}
+          icon={(<IconPrimary {...theme.MainPage.addToSetBtn.iconProps} />)}
+        />
+      </Animatable.View>
     </View>
   </View>
 );

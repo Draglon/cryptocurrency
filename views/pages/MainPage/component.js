@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 import { withTheme, Text, Divider } from 'react-native-elements';
 import { isEmpty } from 'ramda';
 
 import ButtonPrimary from '../../shared/ButtonPrimary';
+import IconPrimary from '../../shared/IconPrimary';
 import InputField from '../../shared/InputField';
 import CurrencyField from '../../shared/CurrencyField';
 
@@ -46,19 +47,31 @@ const MainPage = ({
       </View>
     </View>
     <Divider />
-    <View style={theme.MainPage.bodyStyle}>
-      {!isEmpty(selectedCurrencySet) && (
-        selectedCurrencySet.map((currency) => (
-          <CurrencyField
-            key={currency}
-            currency={currency}
-            selectedCurrency={selectedCurrency}
-            price={rates[currency]}
-            priceSelectedCurrency={rates[selectedCurrency]}
-            count={currencyCount}
-          />
-        ))
-      )}
+    <SafeAreaView style={theme.MainPage.scroll}>
+      <ScrollView>
+        <View style={theme.MainPage.bodyStyle}>
+          {!isEmpty(selectedCurrencySet) && (
+            selectedCurrencySet.map((currency) => (
+              <CurrencyField
+                key={currency}
+                currency={currency}
+                selectedCurrency={selectedCurrency}
+                price={rates[currency]}
+                priceSelectedCurrency={rates[selectedCurrency]}
+                count={currencyCount}
+              />
+            ))
+          )}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+    <View>
+      <ButtonPrimary
+        title=""
+        onPress={onAddToSet}
+        customStyle={theme.MainPage.addToSetBtn.buttonProps}
+        icon={(<IconPrimary {...theme.MainPage.addToSetBtn.iconProps} />)}
+      />
     </View>
   </View>
 );
@@ -72,7 +85,12 @@ MainPage.propTypes = {
       headerTitleStyle: PropTypes.shape({}).isRequired,
       showCurrencyButton: PropTypes.shape({}).isRequired,
       showCurrencyInput: PropTypes.shape({}).isRequired,
+      scroll: PropTypes.shape({}).isRequired,
       bodyStyle: PropTypes.shape({}).isRequired,
+      addToSetBtn: PropTypes.shape({
+        buttonProps: PropTypes.shape({}).isRequired,
+        iconProps: PropTypes.shape({}).isRequired,
+      }).isRequired,
     }).isRequired,
   }).isRequired,
   rates: PropTypes.shape({}).isRequired,

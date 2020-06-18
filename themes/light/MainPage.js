@@ -1,4 +1,8 @@
-import { COLORS } from '../../constants/variables';
+import { Dimensions } from 'react-native';
+
+import { COLORS, BORDER } from '../../constants/variables';
+
+const { height } = Dimensions.get('window');
 
 export default {
   style: {},
@@ -37,10 +41,32 @@ export default {
       borderWidth: 1,
     },
   },
+  scroll: {
+    height: height - 265,
+  },
   bodyStyle: {
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 10,
     paddingRight: 10,
+  },
+  addToSetBtn: {
+    buttonProps: {
+      buttonStyle: {
+        justifyContent: 'center',
+        alignContent: 'center',
+        borderRadius: BORDER.borderRadiusHalf,
+        width: 60,
+        height: 60,
+        position: 'absolute',
+        bottom: 10,
+        right: 10,
+      },
+    },
+    iconProps: {
+      iconName: 'plus',
+      iconSize: 24,
+      iconColor: COLORS.white,
+    },
   },
 };

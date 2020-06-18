@@ -27,6 +27,7 @@ export const COLORS = {
 
 export const BORDER = {
   borderRadiusBase: 4,
+  borderRadiusHalf: 50,
   borderWidthBase: 1,
 };
 

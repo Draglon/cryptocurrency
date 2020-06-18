@@ -6,7 +6,7 @@ const { height } = Dimensions.get('window');
 
 export default {
   containerStyle: {
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.grayLight,
   },
   headerStyle: {
     backgroundColor: COLORS.gray,

@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SafeAreaView, ScrollView, View } from 'react-native';
 import { withTheme, Text, Divider } from 'react-native-elements';
-import * as Animatable from 'react-native-animatable';
 import { isEmpty } from 'ramda';
 
+import ButtonAddToSet from './ButtonAddToSet';
 import ButtonPrimary from '../../shared/ButtonPrimary';
-import IconPrimary from '../../shared/IconPrimary';
 import InputField from '../../shared/InputField';
 import CurrencyField from '../../shared/CurrencyField';
 
 const MainPage = ({
+  navigation,
   theme,
   rates,
   currencyCount,
@@ -66,26 +66,12 @@ const MainPage = ({
         </View>
       </ScrollView>
     </SafeAreaView>
-    <View>
-      {/* <ButtonPrimary
-        title=""
-        onPress={onAddToSet}
-        customStyle={theme.MainPage.addToSetBtn.buttonProps}
-        icon={(<IconPrimary {...theme.MainPage.addToSetBtn.iconProps} />)}
-      /> */}
-      <Animatable.View>
-        <ButtonPrimary
-          title=""
-          onPress={onAddToSet}
-          customStyle={theme.MainPage.addToSetBtn.buttonProps}
-          icon={(<IconPrimary {...theme.MainPage.addToSetBtn.iconProps} />)}
-        />
-      </Animatable.View>
-    </View>
+    <ButtonAddToSet navigation={navigation} />
   </View>
 );
 
 MainPage.propTypes = {
+  navigation: PropTypes.shape({}).isRequired,
   theme: PropTypes.shape({
     MainPage: PropTypes.shape({
       style: PropTypes.shape({}).isRequired,

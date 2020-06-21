@@ -52,15 +52,20 @@ export default {
   },
   addToSetBtn: {
     buttonProps: {
-      buttonStyle: {
+      containerStyle: {
         justifyContent: 'center',
         alignContent: 'center',
-        borderRadius: BORDER.borderRadiusHalf,
-        width: 60,
-        height: 60,
+        alignItems: 'center',
+        borderRadius: 30,
         position: 'absolute',
         bottom: 10,
         right: 10,
+        width: 60,
+        height: 60,
+      },
+      buttonStyle: {
+        justifyContent: 'center',
+        alignContent: 'center',
       },
     },
     iconProps: {

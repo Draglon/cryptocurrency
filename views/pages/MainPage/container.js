@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Animated } from 'react-native';
 import { connect } from 'react-redux';
 import { compose } from 'ramda';
 
@@ -21,6 +22,8 @@ class MainPageContainer extends Component {
   // eslint-disable-next-line react/state-in-constructor
   state = {
     currencyCount: '0',
+    animatedButtonSize: new Animated.Value(0),
+    animatedButtonOpacity: new Animated.Value(0),
   };
 
   componentDidMount() {

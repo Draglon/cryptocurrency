@@ -5,7 +5,7 @@ import IconPrimary from '../component';
 
 describe('IconPrimary component matches snapshot', () => {
   const defaultProps = {
-    iconType: 'mock  font icon',
+    iconType: 'mock font icon',
     iconName: 'email',
     iconSize: 18,
     iconColor: 'white',

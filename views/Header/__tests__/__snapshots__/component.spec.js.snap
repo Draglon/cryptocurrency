@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component matches snapshot with dark theme 1`] = `ShallowWrapper {}`;
+
+exports[`Header component matches snapshot with default props 1`] = `ShallowWrapper {}`;
